@@ -3,6 +3,7 @@ class CommnentController{
     protected $connect;
     protected $commentPie;
     protected $commentCount;
+    
 
     function __construct(){
         $connect=null;

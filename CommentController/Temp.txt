@@ -1,0 +1,18 @@
+<?php
+require_once("CommentController.php");
+class PostComment extends PostAndFilter{
+    function __construct(){
+        parent::__construct();
+    }
+
+    function Post(){
+        parent:$this->Connect2DB();
+
+        $this->comment_content="sssss";//$_POST["comment_content"];
+
+        $filteredComment= new FilterComment;
+        $filteredComment->Filter();
+        echo $filteredComment;
+    }
+}
+?>

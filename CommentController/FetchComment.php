@@ -1,6 +1,6 @@
 <?php
 require_once("CommentController.php");
-class FetchComment extends CommnentController{
+class FetchComment extends CommentController{
     function __construct(){
         parent::__construct();
     }
