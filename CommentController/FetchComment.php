@@ -6,7 +6,7 @@ class FetchComment extends CommentController{
     }
 
     function Fetch(){
-        parent:$this->Connect2DB();
+        $this->Connect2DB();
 
 
         $query="SELECT * FROM CommentTable";
@@ -17,6 +17,8 @@ class FetchComment extends CommentController{
 			$this->commentPie[$this->commentCount]=$data["commentItem"];
 			$this->commentCount++;
 		}
+
+        $this->Disconnect2DB();
     }
 }
 ?>

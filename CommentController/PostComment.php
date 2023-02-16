@@ -10,16 +10,23 @@ class PostComment extends CommentController{
         $this->commentContent = filter_var($this->commentContent, FILTER_SANITIZE_STRING);
     } 
 
-    function Post(){
-        parent:$this->Connect2DB();
+    function Post($commentCarrier){
+        $this->Connect2DB();
 
-        $this->commentContent="sssssxzcxzs<h1>";//$_POST["comment_content"];
+        $this->commentContent=$commentCarrier;
 
         $this->Filter();
-        echo $this->commentContent;
+
+        $query=" INSERT INTO CommentTable(commentItem)VALUES (:commentItem)";
+    $trigger=$this->connect->prepare($query);
+    $trigger->execute(
+        array(
+            ':commentItem'=>$this->commentContent
+        )
+    );
+
+        $this->Disconnect2DB();
+    header("Location: ".$this->indexLocation);
     }
 }
-
-$s= new PostComment;
-$s->Post();
 ?>
