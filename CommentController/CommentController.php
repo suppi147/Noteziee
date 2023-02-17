@@ -1,14 +1,10 @@
 <?php
 class CommentController{
     protected $connect;
-    protected $commentPie;
-    protected $commentCount;
-    public $indexLocation="http://localhost/Noteziee/CommentUI/index.html";
+    public $indexLocation="http://localhost/Noteziee/CommentUI/";
 
     function __construct(){
         $connect=null;
-        $commentPie=array(); 
-        $commentCount=0;
     }
 
     function Connect2DB(){
@@ -24,7 +20,7 @@ class CommentController{
         }    
     }
     function Disconnect2DB(){
-        $this->connect=null;
+	$this->connect=null;
     }
 
 
