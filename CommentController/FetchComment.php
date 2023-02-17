@@ -1,24 +1,24 @@
 <?php
 require_once("CommentController.php");
 class FetchComment extends CommentController{
+    protected $commentPie;
+
     function __construct(){
-        parent::__construct();
+	$commentPie=array();
+	parent::__construct();
     }
 
     function Fetch(){
-        $this->Connect2DB();
-
+        parent:$this->Connect2DB();
 
         $query="SELECT * FROM CommentTable";
         $statement= $this->connect->prepare($query);
         $statement->execute();
         $result=$statement->fetchAll();
         foreach($result as $data){
-			$this->commentPie[$this->commentCount]=$data["commentItem"];
-			$this->commentCount++;
+			$this->commentPie[]=$data["commentItem"];
 		}
-
-        $this->Disconnect2DB();
+        return $this->commentPie;
     }
 }
 ?>
