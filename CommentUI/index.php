@@ -19,3 +19,11 @@
     </div>
    </form>
 </body>
+<?php
+include __DIR__.'/../CommentController/ShowComment.php';
+
+$showerPack= new ShowComment();
+foreach( $showerPack->Show() as $shower){
+  echo $shower.'<brs>';
+}
+?>
