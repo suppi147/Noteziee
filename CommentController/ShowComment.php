@@ -17,8 +17,8 @@ class ShowComment extends CommentController{
 
       function Show(){
             $fetcherPack=new FetchComment();
-            $htmlStarter='<p>';
-            $htmlEnder='</p>';
+            $htmlStarter='<div class="Container"><div class="panel panel-default"><div class="panel-body">';
+            $htmlEnder='</div></div></div>';
 
             $reverseComentPie= new ArrayIterator(array_reverse($fetcherPack->Fetch()));
 
