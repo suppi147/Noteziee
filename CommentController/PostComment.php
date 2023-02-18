@@ -7,7 +7,12 @@ class PostComment extends CommentController{
     }
 
     function Filter(){
-        $this->commentContent = filter_var($this->commentContent, FILTER_SANITIZE_STRING);
+        if (strlen(trim($this->commentContent)) == 0)
+            return false;
+        
+        $this->commentContent=htmlspecialchars($this->commentContent, ENT_QUOTES, 'UTF-8');
+        return true;
+        
     } 
 
     function Post($commentCarrier){
@@ -15,15 +20,15 @@ class PostComment extends CommentController{
 
         $this->commentContent=$commentCarrier;
 
-        $this->Filter();
-
-        $query=" INSERT INTO CommentTable(commentItem)VALUES (:commentItem)";
-    $trigger=$this->connect->prepare($query);
-    $trigger->execute(
-        array(
-            ':commentItem'=>$this->commentContent
-        )
-    );
+        if($this->Filter()){
+            $query=" INSERT INTO CommentTable(commentItem)VALUES (:commentItem)";
+            $trigger=$this->connect->prepare($query);
+            $trigger->execute(
+                array(
+                    ':commentItem'=>$this->commentContent
+                )
+            );
+        }
 
         $this->Disconnect2DB();
     header("Location: ".$this->indexLocation);
