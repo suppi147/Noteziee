@@ -10,7 +10,7 @@
 </head>
 <body>
   <br><h2 align="center">Noteziee</h2></br>
-  <form action="http://localhost/Noteziee/Mediator/MainRail.php" method="POST" id="commentID">
+  <form action="http://localhost/Noteziee/MainController/MainRail.php" method="POST" id="commentID">
     <div class="form-group">
      <textarea name="commentContent" id="commentContent" class="form-control" placeholder="Enter Comment" rows="6" cols="40"></textarea>
     </div>
