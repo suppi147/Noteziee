@@ -1,7 +1,7 @@
 <?php
 class CommentController{
     protected $connect;
-    public $indexLocation="http://localhost/Noteziee/CommentUI/";
+    public $indexLocation="http://localhost/Noteziee/CommentUI/index/index.php";
 
     function __construct(){
         $connect=null;
