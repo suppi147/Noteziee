@@ -9,6 +9,7 @@ if(strcmp($_POST["control_flag"],"post")==0){
      $postTrigger->post($_POST["commentContent"]);
 }
 else{
+     echo "control flag invalid";
      header("Location: ".$controller->indexLocation);
 }
 ?>
