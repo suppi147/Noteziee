@@ -1,0 +1,5 @@
+<form action="orderform.html" method="post" target="top">
+<input type="hidden" name="input" value="<?php echo $input; ?>">
+<input type="submit" value="Edit">
+</form>
+<input type="text" name="input" size=50 maxlength=40 value="<?php echo $_POST['input']; ?>">
