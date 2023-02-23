@@ -1,21 +1,9 @@
-# Noteziee 1.0
+# Noteziee 1.1
 
 ### Introduction
 - Noteziee is commenting system for memorizing purposes and interacting between environments for example OS with virtual OS.
 
-### Ability
-- Allow any comment including coding syntax
-- Easy to see and interact comment layout
-
-### Technology used
-- Backend
-    - PHP
-- Frontend
-    - bootstrap 4
-- Database
-    - MySQL
-
-### Future development
+### Requirement
 - frontend
     - phone web application
     - AJAX for speed
@@ -26,5 +14,18 @@
     - Edit comment
     - upload image
     - privileged separation
-### Sample
-![](https://i.imgur.com/XnGPwUu.png)
+
+
+### Ability
+- Allow any comment including coding syntax
+- Easy to see and interact comment layout
+- edit and delete
+
+### Technology used
+- Backend
+    - PHP
+- Frontend
+    - bootstrap 4
+- Database
+    - MySQL
+
