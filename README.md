@@ -1,4 +1,3 @@
-While working on our project, we have a valuable chance to learn and practice how DNS, Web Server, and Databases can effectively work with each other. Moreover, our team works hard and smartly to achieve a fast and perfect result. In short, all our team members have gained a better understanding of designing a network structure and how to work effectively as a team.
 # Noteziee 1.0
 
 ### Introduction
