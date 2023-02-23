@@ -1,7 +1,8 @@
+While working on our project, we have a valuable chance to learn and practice how DNS, Web Server, and Databases can effectively work with each other. Moreover, our team works hard and smartly to achieve a fast and perfect result. In short, all our team members have gained a better understanding of designing a network structure and how to work effectively as a team.
 # Noteziee 1.0
 
 ### Introduction
-- Noteziee is commenting system for memoring purpose and iteracting between environment for example: OS with virtual OS.
+- Noteziee is commenting system for memorizing purposes and interacting between environments for example OS with virtual OS.
 
 ### Ability
 - Allow any comment including coding syntax
@@ -20,10 +21,11 @@
     - phone web application
     - AJAX for speed
     - add comment extent capability
-    - Delete muliple/all comment
+    - Delete multiple/all comment
 - Backend
     - Delete comment
     - Edit comment
     - upload image
-    - priviledge speration
-
+    - privileged separation
+### Sample
+![](https://i.imgur.com/XnGPwUu.png)
