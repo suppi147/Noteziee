@@ -19,7 +19,8 @@
 ### Ability
 - Allow any comment including coding syntax
 - Easy to see and interact comment layout
-- edit and delete
+- Edit and delete
+- Upload images
 
 ### Technology used
 - Backend
