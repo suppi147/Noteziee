@@ -1,26 +1,20 @@
 <?php
 require_once("CommentController.php");
+require_once("FilterComment.php");
 class PostComment extends CommentController{
     protected $commentContent;
+    protected $filterNet;
     function __construct(){
+        $this->filterNet= new FilterComment();
         parent::__construct();
     }
 
-    function Filter(){
-        if (strlen(trim($this->commentContent)) == 0)
-            return false;
-        
-        $this->commentContent=htmlspecialchars($this->commentContent, ENT_QUOTES, 'UTF-8');
-        return true;
-        
-    } 
-
     function Post($commentCarrier){
+
         $this->Connect2DB();
 
-        $this->commentContent=$commentCarrier;
-
-        if($this->Filter()){
+        if($this->filterNet->FilterComment($commentCarrier)==true){
+            $this->commentContent=$this->filterNet->GetItemfiltering();
             $query=" INSERT INTO CommentTable(commentItem)VALUES (:commentItem)";
             $trigger=$this->connect->prepare($query);
             $trigger->execute(
@@ -29,9 +23,10 @@ class PostComment extends CommentController{
                 )
             );
         }
-
+        
         $this->Disconnect2DB();
-    header("Location: ".$this->indexLocation);
+
+        header("Location: ".$this->indexLocation);
     }
 }
 ?>
