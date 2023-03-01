@@ -24,13 +24,6 @@ class DeleteComment extends CommentController{
         }
         
 
-
-        //Announcing
-        //echo '<label class="text-fail"> Comment deleted</label>';
-
-        //Show again
-
-
         //Disconnect DB
         $this->Disconnect2DB();
 
