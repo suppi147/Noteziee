@@ -25,8 +25,6 @@ class PostComment extends CommentController{
         }
         
         $this->Disconnect2DB();
-
-        header("Location: ".$this->indexLocation);
     }
 }
 ?>
