@@ -28,71 +28,31 @@
 <?php
 include __DIR__.'/../../CommentController/FetchComment.php';
 include __DIR__.'/../../CommentController/DeleteComment.php';
+include __DIR__.'/../../CommentController/EditComment.php';
+require_once("CommentBox.php");
+require_once("DeleteButton.php");
+require_once("EditButton.php");
+require_once("ModalButton.php");
 
 define("MAX_COMMENTLINE",6);
-$CommentBoxStarter='<div class="col-12 col-md-6 col-lg-4">
-<div class="card">
-    <div class="card-header px-4 pt-4">
-        <div class="card-actions float-right">
-            <div class="dropdown show">
-
-                    <button type="button" onclick="deleteID(';
-$DeleteButtonTrigger=');" class="btn btn-warning ">Delete</button>                     
-               ';
-$modalButtonStarter='
-                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#';
-$ModalIDstarter='">
-                    Details
-                    </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="';
-$ModalIDender='" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Details</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body" style="white-space: break-spaces;">
-                            <p>';
-$ModalButtonCommenter='</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>';
-$ModalButtonEnder='    
-            </div>
-        </div>
-    </div>
-    <div class="card-body px-5 pt-1" style="white-space: break-spaces;">
-        <p>';
-$CommentBoxEnder='</p>
-</div>
-</div>
-</div>';
-$showerPack= new FetchComment();
+    $showerPack= new FetchComment();
+    $commentBoxTrigger= new CommentBox();
+    $deleteButtonTrigger=new DeleteButton();
+    $editButtonTrigger=new EditButton();
+    $modalButtonTrigger=new ModalButton();
 
     foreach( $showerPack->Fetch() as $commentID=> $commentShow){
-        $randomModalID=substr(str_shuffle(str_repeat($x='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil(20/strlen($x)) )),1,20);
-        if(substr_count($commentShow,"\n")>MAX_COMMENTLINE){
-            $startPack = $CommentBoxStarter.$commentID.$DeleteButtonTrigger.$modalButtonStarter.$randomModalID.$ModalIDstarter.$randomModalID.$ModalIDender.$commentShow;
-            $endPack = $ModalButtonCommenter.$ModalButtonEnder.$commentShow.$CommentBoxEnder;
-        }
-        else{
-            $startPack = $CommentBoxStarter.$commentID.$DeleteButtonTrigger;
-            $endPack = $ModalButtonEnder.$commentShow.$CommentBoxEnder;
-        }
-        
-            echo $startPack.$endPack;
+        $commentBoxTrigger->AddDeleteButton2Pack($deleteButtonTrigger->DeleteButtonPack($commentID));
+        $commentBoxTrigger->AddEditButton2Pack($editButtonTrigger->EditButtonPack($commentShow,$commentID));
+        if(substr_count($commentShow,"\n")>MAX_COMMENTLINE)
+            $commentBoxTrigger->AddModalButton2Pack($modalButtonTrigger->ModalButtonPack($commentShow));       
+        echo $commentBoxTrigger->FullPack($commentShow);
     }
+
+$editPack = new EditComment();
+
 echo '</div>
-</div>
-</body>
-</html>
-';
+        </div>
+            </body>
+                </html>';
 ?>
