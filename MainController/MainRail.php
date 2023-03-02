@@ -2,6 +2,7 @@
 include __DIR__.'/../CommentController/CommentController.php';
 include __DIR__.'/../CommentController/PostComment.php';
 include __DIR__.'/../CommentController/DeleteComment.php';
+include __DIR__.'/../CommentController/EditComment.php';
 
 $controller= new CommentController();
 
@@ -13,9 +14,13 @@ else if(strcmp($_POST["control_flag"],"delete")==0){
      $postTrigger=new DeleteComment();
      $postTrigger->Delete($_POST["id"]);
 }
+else if(strcmp($_POST["control_flag"],"edit")==0){
+     $postTrigger=new EditComment();
+     $postTrigger->Edit($_POST["commentContent"],$_POST["id"]);
+}
 else{
-     echo "error";
-     header("Location: ".$controller->indexLocation);
+     echo '<script>alert("Unknown control flag")</script>';
 }
 header("Location: ".$controller->indexLocation);
 ?>
+
