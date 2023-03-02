@@ -13,14 +13,14 @@ class DeleteComment extends CommentController{
         parent:$this->Connect2DB();
         //id filtering
         if($this->filterNet->FilterID($unfilterID)==true){
-            $this->filterID=$this->filterNet->GetItemfiltering();
+            $this->filterID=$this->filterNet->GetIDFiltering();
             //execute Delete query
             $query="DELETE FROM CommentTable WHERE id=".$this->filterID;
             $statement= $this->connect->prepare($query);
             $statement->execute();
         }
         else{
-            echo 'invalid ID';
+            echo '<script>alert("Invalid ID")</script>';
         }
         
 
