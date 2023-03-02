@@ -1,12 +1,18 @@
 <?php
 class FilterComment{
     protected $itemFiltering;
+    protected $IDFiltering;
     function __construct(){
         $this->itemFiltering="NULL";
+        $this->IDFiltering=-1;
     }
 
     function GetItemfiltering(){
         return $this->itemFiltering;
+    }
+
+    function GetIDFiltering(){
+        return $this->IDFiltering;
     }
 
     function FilterComment($commentUnfilter){
@@ -18,12 +24,12 @@ class FilterComment{
     } 
 
     function FilterID($IDFiltering){
-        $this->itemFiltering=$IDFiltering;
-        if (strlen(trim($this->itemFiltering)) != 0){
-            if(is_numeric($this->itemFiltering)== true){
-                if(strpos($this->itemFiltering,'.')== false){
-                    if($this->itemFiltering>0){
-                        $this->itemFiltering=(int)$this->itemFiltering;     
+        $this->IDFiltering=$IDFiltering;
+        if (strlen(trim($this->IDFiltering)) != 0){
+            if(is_numeric($this->IDFiltering)== true){
+                if(strpos($this->IDFiltering,'.')== false){
+                    if($this->IDFiltering>0){
+                        $this->IDFiltering=(int)$this->IDFiltering;     
                         return true;
                     }
                 }
