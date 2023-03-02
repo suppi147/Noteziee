@@ -10,6 +10,8 @@ class FetchComment extends CommentController{
 	parent::__construct();
     }
 
+    
+
     function Fetch(){
         parent:$this->Connect2DB();
 
