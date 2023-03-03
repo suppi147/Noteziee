@@ -14,13 +14,14 @@
     <body>
         <div class="container">
             <h1 class="h1-edit">Noteziee</h1>
-            <form action="http://localhost/Noteziee/MainController/MainRail.php" method="POST" id="commentID">
+            <form action="http://localhost/Noteziee/MainController/MainRail.php" method="POST" id="commentID" onclick="ReceiveEnter();">
                 <div class="form-group">
                  <textarea name="commentContent" id="commentContent" class="form-control" placeholder="Enter Comment" rows="10" cols="60"></textarea>
                 </div>
                 <div class="form-group">
                  <input type="hidden" name="control_flag" id="control_flag" value="post" />
-                 <div class="col text-center"><input type="submit" name="submit" id="submit" class="btn btn-primary btn-lg" value="Submit" />
+                 <div class="col text-center"><button id="myBtn" type="submit" class="btn btn-primary" >Submit</button>
+                 
                 </div> 
                 </div>
             </form>
