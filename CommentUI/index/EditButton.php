@@ -16,7 +16,7 @@ class EditButton extends ModalButton{
                     Edit
                     </button>
                     <!-- Modal -->
-                    <div class="modal fade" id="';
+                    <div class="modal" id="';
         
         
     }
