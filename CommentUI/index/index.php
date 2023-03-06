@@ -25,32 +25,38 @@
                 </div> 
                 </div>
             </form>
+            <div class="col text-center" style="padding-bottom:15px;">
+            </div>
             <div class="row">
 <?php
 include __DIR__.'/../../CommentController/FetchComment.php';
 include __DIR__.'/../../CommentController/DeleteComment.php';
 include __DIR__.'/../../CommentController/EditComment.php';
-require_once("CommentBox.php");
+require_once("BoxCommentController.php");
 require_once("DeleteButton.php");
 require_once("EditButton.php");
 require_once("ModalButton.php");
-
+require_once("CheckBox.php");
+require_once("SelectAllButton.php");
 define("MAX_COMMENTLINE",6);
     $showerPack= new FetchComment();
-    $commentBoxTrigger= new CommentBox();
+
+    $commentBoxTrigger= new BoxCommentController();
     $deleteButtonTrigger=new DeleteButton();
     $editButtonTrigger=new EditButton();
     $modalButtonTrigger=new ModalButton();
+    $checkBoxTrigger=new CheckBox();
+    $selectAllButtonTrigger=new SelectAllButton();
 
     foreach( $showerPack->Fetch() as $commentID=> $commentShow){
+        $commentBoxTrigger->AddDeleteCheckBox2Pack($checkBoxTrigger->CheckBoxPack($commentID));
+        $commentBoxTrigger->AddSelectAllButton2Pack($selectAllButtonTrigger->SelectAllButtonPack());
         $commentBoxTrigger->AddDeleteButton2Pack($deleteButtonTrigger->DeleteButtonPack($commentID));
         $commentBoxTrigger->AddEditButton2Pack($editButtonTrigger->EditButtonPack($commentShow,$commentID));
         if(substr_count($commentShow,"\n")>MAX_COMMENTLINE)
             $commentBoxTrigger->AddModalButton2Pack($modalButtonTrigger->ModalButtonPack($commentShow));       
         echo $commentBoxTrigger->FullPack($commentShow);
     }
-
-$editPack = new EditComment();
 
 echo '</div>
         </div>
