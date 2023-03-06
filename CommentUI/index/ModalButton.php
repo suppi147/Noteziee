@@ -11,7 +11,7 @@ class ModalButton{
                     Details
                     </button>
                     <!-- Modal -->
-                    <div class="modal fade" id="';
+                    <div class="modal" id="';
 $this->modalIDender='" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
