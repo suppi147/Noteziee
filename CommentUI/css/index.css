@@ -19,6 +19,9 @@ body {
     margin-top: 20px;
     background-color: #f7f7fc;
 }
+.leftCorner {
+    margin-left:-200%;/* whatever */
+  }
 .card-subtitle,
 .card-title {
     font-weight: 400;
@@ -27,6 +30,7 @@ body {
     font-size: 0.875rem;
     color: #495057;
 }
+.big-checkbox {width: 30px; height: 30px;}
 .card {
     margin-bottom: 24px;
     box-shadow: 0 0 0.875rem 0 rgba(33, 37, 41, 0.05);
