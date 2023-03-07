@@ -4,7 +4,7 @@ class DeleteButton{
 
     public $comfirmModalHeader;
     public $comfirmModalTailer;
-    
+
     function __construct(){
         
         
@@ -12,6 +12,7 @@ class DeleteButton{
     }
 
     function DeleteButtonPack($deleteID){
+
       $randomModalID=substr(str_shuffle(str_repeat($x='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil(20/strlen($x)) )),1,20);
       $this->comfirmModalHeader='<button type="button" class="btn btn-warning" data-toggle="modal" onclick="ToggleOn1('.$deleteID.');ChecklistArray('.$deleteID.');" data-target="#'.$randomModalID.'">
         Delete
@@ -31,7 +32,7 @@ class DeleteButton{
             </div>
             <div class="modal-footer">';
             
-        $this->DeleteButton='<button type="button" onclick="deleteID('.$deleteID.');" class="btn btn-warning ">Confirm</button>';
+        $this->DeleteButton='<button type="button" onclick="deleteID('.$deleteID.');" data-dismiss="modal" class="btn btn-warning ">Confirm</button>';
      
       
       $this->comfirmModalTailer='<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="UntoggleOn1('.$deleteID.');">Close</button>
