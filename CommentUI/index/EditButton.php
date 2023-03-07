@@ -11,7 +11,7 @@ class EditButton extends ModalButton{
         parent::__construct();
         
         $this->modalButtonHeader='
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#';
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#';
         $this->modalIDstarter='">
                     Edit
                     </button>
@@ -41,7 +41,7 @@ class EditButton extends ModalButton{
                                     <div class="modal-footer">
                                         <div class="form-group">
                                         <input type="hidden" name="control_flag" id="control_flag" value="edit" />
-                                        <input type="hidden" name="id" id="id" value="'.$commentID.'" />
+                                        <input type="hidden" name="id" id="id" value="'.$commentID.'" onclick="Copy('.$commentID.');"/>
                                         <button id="'.$this->editbuttonID.'" type="submit" class="btn btn-primary" >Submit</button>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         <script>
