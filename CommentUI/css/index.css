@@ -3,6 +3,7 @@
         max-width: 1500px;
     }
 }
+
 .h1-edit{
  color:#FF69B4; 
     font-family: "Great Vibes", cursive;
@@ -47,7 +48,7 @@ body {
     border-radius: 0.25rem;
 }
 .card-body {
-    height: 200px;
+    height: 300px;
     overflow: hidden;
     width: 100%;
     flex: 1 1 auto;
