@@ -18,6 +18,7 @@ function deleteID (id) {
   
   document.body.appendChild(form);
   form.submit();
+  
 }
 
 function ReceiveEnter(){
@@ -78,4 +79,24 @@ function ChecklistArray(checkID){
     xhttp.open("POST","http://localhost/Noteziee/MainController/MainRail.php",true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("control_flag=select&id="+checkID+"&checker="+checkboxes[0].checked);
+}
+
+function tempAlert(msg,duration)
+{
+ var el = document.createElement("div");
+ el.setAttribute("class","alert alert-success");
+ el.setAttribute("style","position:fixed;top:80%;left:1%;");
+ el.innerHTML = msg;
+ setTimeout(function(){
+  el.parentNode.removeChild(el);
+ },duration);
+ document.body.appendChild(el);
+}
+function CopyToClipboard(element) {
+  var $temp = $("<textarea>");
+  var brRegex = /<br\s*[\/]?>/gi;
+  $("body").append($temp);
+  $temp.val($(element).html().replace(brRegex, "\r\n")).select();
+  document.execCommand("copy");
+  $temp.remove();
 }
