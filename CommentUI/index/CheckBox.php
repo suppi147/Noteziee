@@ -8,9 +8,8 @@ class CheckBox{
     }
 
     function CheckBoxPack($checkID){
-        $this->checkbox='<form action="http://localhost/Noteziee/MainController/MainRail.php" method="POST" id="'.$checkID.'">
-                            <input class="big-checkbox" name="check[]" type="checkbox" value="'.$checkID.'" id="'.$checkID.'" onclick="ChecklistArray('.$checkID.');">
-                        </form>';
+        $this->checkbox='
+                            <input class="big-checkbox" name="check[]" type="checkbox" value="'.$checkID.'" id="'.$checkID.'" onclick="ChecklistArray('.$checkID.');">';
         return $this->checkbox; 
     }
 }
