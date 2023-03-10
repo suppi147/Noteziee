@@ -19,6 +19,8 @@ class FilterComment{
         if (strlen(trim($commentUnfilter)) == 0)
             return false;
         
+        $commentUnfilter=str_replace("<xmp>","<p>",$commentUnfilter);
+        $commentUnfilter=str_replace("</xmp>","</p>",$commentUnfilter);
         $this->itemFiltering=htmlspecialchars($commentUnfilter, ENT_QUOTES, 'UTF-8');
         return true;
     } 
