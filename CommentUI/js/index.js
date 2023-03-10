@@ -26,7 +26,7 @@ function ReceiveEnter(){
   input.addEventListener("keypress", function(event) {
   if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
-      document.getElementById("myBtn").click();
+      document.getElementById("submit").click();
   }
   });
 }
@@ -99,4 +99,24 @@ function CopyToClipboard(element) {
   $temp.val($(element).html().replace(brRegex, "\r\n")).select();
   document.execCommand("copy");
   $temp.remove();
+}
+
+
+function emptyAlert(msg,duration)
+{
+ var el = document.createElement("div");
+ el.setAttribute("class","alert alert-warning");
+ el.setAttribute("style","position:fixed;top:80%;left:1%;");
+ el.innerHTML = msg;
+ setTimeout(function(){
+  el.parentNode.removeChild(el);
+ },duration);
+ document.body.appendChild(el);
+}
+function IsEmpty() {
+  if (document.getElementById('commentContent').value === "") {
+    emptyAlert("No comment entered!!!",1000);
+    return false;
+  }
+  return true;
 }
