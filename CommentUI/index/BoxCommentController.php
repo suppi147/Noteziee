@@ -1,7 +1,8 @@
 <?php
 define("PACK_HEADER",'<div class="col-12 col-md-6 col-lg-4">
                         <div class="card">
-                            <div class="card-header px-4 pt-4">
+                            <div class="card-header px-10 pt-4">
+                            <div class="card-actions float-right ">
                             ');
 class BoxCommentController{
     public $commentBoxHeader;
@@ -13,7 +14,7 @@ class BoxCommentController{
         $this->commentBoxHeader=PACK_HEADER;                                 
     }
     function AddPackHeader($checkboxPack){
-        $this->commentBoxHeader=PACK_HEADER.$checkboxPack.'<div class="card-actions float-right ">';
+        $this->commentBoxHeader=PACK_HEADER;
     }
     function AddButtons2Pack($adder){
         $this->commentBoxHeader=$this->commentBoxHeader.$adder;
@@ -22,13 +23,12 @@ class BoxCommentController{
     function FullPack($commentBox,$id){
         $this->commentBoxItem='
                                 </div>
-                                    </div>
-                                    
-                                        
-                                        <div class="card-body" style="white-space: break-spaces;"><span>
-                                    <p id="'.$id.'">';
-        $this->commentBoxTailer='</p>
-                                    </span>
+                                    </div> 
+                                        <div class="card-body" style="padding-left: 3rem;
+                                        padding-right: 3rem;
+                                        padding-top: 2rem;
+                                        padding-bottom: 0.2rem;"><span><p class="p-edit" id="'.$id.'">';
+        $this->commentBoxTailer='</p></span>
                                     </div>
                                           </div>
                                                 </div>';  
