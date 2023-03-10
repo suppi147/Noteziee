@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
 
-        <title>Noteziee ;3</title>
+        <title>Noteziee</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -12,9 +12,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="http://localhost/Noteziee/CommentUI/js/index.js"></script>
         
-        <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost/Noteziee/Homepage/assets/icon/icon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/images/fav.jpg">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="http://localhost/Noteziee/Homepage/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://localhost/Noteziee/Homepage/assets/css/fontawsom-all.min.css">
@@ -29,8 +28,9 @@
           <div class="container">
               <div class="row">
                    <div class="col-lg-3 col-md-12 logo">
-                   <a href="http://localhost/Noteziee/Homepage/"><img class="white" src="http://localhost/Noteziee/Homepage/assets/images/blak.png" alt="" style="margin-top: -50px;"></a>
-                       <a href="http://localhost/Noteziee/Homepage/"><img class="gray" src="http://localhost/Noteziee/Homepage/assets/images/aa.png" alt="" style="margin-top: -10px;"></a>
+                    
+                       <a href="http://localhost/Noteziee/Homepage/"><img class="white" src="http://localhost/Noteziee/Homepage/assets/images/logo.png" alt=""></a>
+                       <a href="http://localhost/Noteziee/Homepage/"><img class="gray" src="http://localhost/Noteziee/Homepage/assets/images/logo-gray.png" alt=""></a>
 
                        <a class="small-menu" class="d-lg-none" data-toggle="collapse" data-target="#menu" href="#menu" >
                            <i  class="fas d-lg-none fa-bars"></i>
@@ -49,7 +49,7 @@
       <div class="container">
       <form action="http://localhost/Noteziee/MainController/MainRail.php" name="submitForm" method="POST" id="commentID" onclick="ReceiveEnter();">
                 <div class="form-group">
-                 <textarea name="commentContent" id="commentContent" class="textarea-edit" placeholder="Enter Something :3" rows="10" cols="60" style="margin-top: 40px;"></textarea>
+                 <textarea name="commentContent" id="commentContent" class="textarea-edit" placeholder="Enter Something :3" rows="10" cols="60"></textarea>
                 </div>
                 <div class="form-group">
                  <input type="hidden" name="control_flag" id="control_flag" value="post" />
