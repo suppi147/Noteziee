@@ -21,10 +21,8 @@ $this->modalIDender='" tabindex="-1" role="dialog" aria-labelledby="exampleModal
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body" style="white-space: break-spaces;">
-                            <p>';
-$this->modalButtonTailer='</p>
-                        </div>
+                        <div class="modal-body" style="white-space: break-spaces;padding-left: 3rem;padding-right: 3rem;padding-top: 0.1rem;padding-bottom: 2rem;"><p class="p-edit">';
+$this->modalButtonTailer='</p></div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
