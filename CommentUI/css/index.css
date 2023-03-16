@@ -1,59 +1,107 @@
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1500px;
+    }
+}
 
 .h1-edit{
-    color:#FF69B4; 
-       font-family: "Great Vibes", cursive;
-        font-size: 75px;
-         line-height: 80px;
-          font-weight: normal;
-           margin-bottom: 0px;
-            margin-top: 40px;
-             text-align: Center; 
-             text-shadow: 0 1px 1px #fff; 
-       
-   }
-   body {
-       margin-top: 20px;
-       background-color: #f7f7fc;
-   }
-   .card-subtitle,
-   .card-title {
-       font-weight: 400;
-   }
-   .card-title {
-       font-size: 0.875rem;
-       color: #495057;
-   }
-   .card {
-       margin-bottom: 24px;
-       box-shadow: 0 0 0.875rem 0 rgba(33, 37, 41, 0.05);
-   }
-   .card {
-       position: relative;
-       display: flex;
-       flex-direction: column;
-       min-width: 0;
-       word-wrap: break-word;
-       background-color: #fff;
-       background-clip: initial;
-       border: 0 solid transparent;
-       border-radius: 0.25rem;
-   }
-   .card-body {
-       flex: 1 1 auto;
-       padding: 1.25rem;
-   }
-   .card-header:first-child {
-       border-radius: 0.25rem 0.25rem 0 0;
-   }
-   .card-header {
-       border-bottom-width: 1px;
-   }
-   .pb-0 {
-       padding-bottom: 0 !important;
-   }
-   .card-header {
-       padding: 1rem 1.25rem;
-       margin-bottom: 0;
-       background-color: #fff;
-       border-bottom: 0 solid transparent;
-   }
+ color:#FF69B4; 
+    font-family: "Great Vibes", cursive;
+     font-size: 100px;
+      line-height: 80px;
+       font-weight: normal;
+        margin-bottom: 0px;
+         margin-top: 40px;
+          text-align: Center; 
+          text-shadow: 0 1px 1px #fff; 
+    
+}
+body {
+    margin-top: 20px;
+    background-color: #f7f7fc;
+}
+.leftCorner {
+    margin-left:-200%;/* whatever */
+  }
+.card-subtitle,
+.card-title {
+    font-weight: 400;
+}
+.card-title {
+    font-size: 0.875rem;
+    color: #495057;
+}
+.big-checkbox {
+
+    width: 30px; 
+    height: 30px;
+    accent-color:rgb(43, 132, 69);}
+.card {
+    
+    margin-bottom: 24px;
+    box-shadow: 0 0 0.875rem 0 rgba(33, 37, 41, 0.05);
+}
+.card {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffebee;
+    background-clip: initial;
+    border: 0 solid transparent;
+    border-radius: 0.25rem;
+}
+.card-body {
+    height: 300px;
+    width:100%;
+    text-align:center;
+    overflow: hidden;
+    flex: 1 1 auto;
+    
+    white-space: break-spaces;
+
+    
+    
+}
+.card-header:first-child {
+    border-radius: 0.25rem 0.25rem 0 0;
+}
+.card-header {
+    border-bottom-width: 1px;
+}
+.pb-0 {
+    padding-bottom: 0 !important;
+}
+.card-header {
+    padding: 1rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #ffffff;
+    border-bottom: 0 solid transparent;
+}
+
+.p-edit{
+    font-family: 'Josefin Sans', sans-serif;
+    color: #020202;
+    font-size: 1.1rem;
+    text-align: left;
+    font-weight: 400;
+    line-height: 1.5;
+
+    
+}
+
+.textarea-edit{
+    font-family: 'Josefin Sans', sans-serif;
+    color: #020202;
+    font-size: 1.2rem;
+    width: 100%;
+    resize: none;
+    border-radius: 15px;
+
+    padding-left: 2rem;padding-top: 2rem;padding-right: 2rem;padding-bottom: 2rem;
+}
+textarea::placeholder {
+    padding-top: 2rem;
+    font-size: 1.2rem;
+  }

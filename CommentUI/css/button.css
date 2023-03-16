@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #1d3557;
+}
+
+#container {
+	position: absolute;
+	padding: 10px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 8rem;
+}
+
+button {
+	padding: 10px 40px;
+	cursor: pointer;
+	font-family: "Montserrat", sans-serif;
+	font-size: 20px;
+}
+
+#transparent {
+	background: none;
+	border: 3px solid #90e0ef;
+	color: #90e0ef;
+	transition: border 300ms ease, transform 800ms ease;
+	border-radius: 50px;
+}
+
+#transparent:hover {
+	transform: scale(1.05);
+	border-color: #90e0ef transparent;
+}
+
+#transparent:active {
+	transform: scale(0.9);
+}
+
+#submit {
+	background-color: #2f65bc;
+	border: none;
+	border-radius: 50px;
+	width: 10rem;
+	position: relative;
+	overflow: hidden;
+	transition: transform 500ms ease;
+}
+
+#submit::before {
+	content: "";
+	background-color: #f4f2f6;
+	width: 0%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: width 500ms ease;
+}
+
+#submit::after {
+	content: "";
+	background-image: url("https://cdn-icons-png.flaticon.com/24/2767/2767192.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100%;
+	width: 0%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: width 500ms ease;
+}
+
+#submit:hover:before,
+#submit:hover:after {
+	width: 100%;
+}
+
+#submit:active {
+	transform: scale(0.9);
+}

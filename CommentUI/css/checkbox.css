@@ -1,0 +1,34 @@
+input[type="checkbox"] {
+    position: relative;
+    width: 35px;
+    height: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgb(129, 10, 198);
+    outline: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    box-shadow: inset 0 0 5px rgb(0 0 0 / 50%);
+    
+  }
+  
+  input[type="checkbox"]::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: translateX(100%);
+    background: #fbf9f7;
+  }
+  
+  input[type="checkbox"]:checked {
+    background: #03bb21;
+  }
