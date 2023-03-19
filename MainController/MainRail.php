@@ -5,6 +5,8 @@ include __DIR__.'/../CommentController/DeleteComment.php';
 include __DIR__.'/../CommentController/EditComment.php';
 include __DIR__.'/../CommentController/SelectAllComment.php';
 
+include __DIR__.'/../UserLogin/LoginController/LoginController.php';
+
 $controller= new CommentController();
 
 if(strcmp($_POST["control_flag"],"post")==0){
@@ -26,6 +28,10 @@ else if(strcmp($_POST["control_flag"],"selectAll")==0){
      $postTrigger->SelectAllIDStackUp($_POST["checker"]);
 }
 else if(strcmp($_POST["control_flag"],"edit")==0){
+     $postTrigger=new EditComment();
+     $postTrigger->Edit($_POST["commentContent"],$_POST["id"]);
+}
+else if(strcmp($_POST["control_flag"],"login")==0){
      $postTrigger=new EditComment();
      $postTrigger->Edit($_POST["commentContent"],$_POST["id"]);
 }

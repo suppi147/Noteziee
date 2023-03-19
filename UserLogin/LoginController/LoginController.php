@@ -1,17 +1,27 @@
 <?php
-class CommentController{
+class LoginController{
     protected $connect;
-    public $indexLocation="http://localhost/Noteziee/CommentUI/index/index.php";
-
+    protected $username;
+    protected $password;
     function __construct(){
+        $this->username="NULL";
+        $this->password="NULL";
         $this->connect=null;
     }
+    function GetUsername(){
+        return $this->username;
+    }
+
+    function GetPassword(){
+        return $this->password;
+    }
+
 
     function Connect2DB(){
         $hostname="localhost";
-        $dbname="CommentDB";
-        $username="root";
-        $password="uitcisco";
+        $dbname="loginDB";
+        $username="loginuser";
+        $password="password";
         try{
             $this->connect=new PDO("mysql:host=$hostname;dbname=$dbname",$username,$password) or die("Can't connect to Database");
         }
@@ -23,6 +33,9 @@ class CommentController{
 	$this->connect=null;
     }
 
+    
 
 }
+$a=new LoginController();
+$a->Connect2DB();
 ?>
