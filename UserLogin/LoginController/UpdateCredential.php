@@ -17,10 +17,5 @@ class UpdateCredential extends LoginController{
     }
 
 }
-$a= new UpdateCredential();
-$a->Insert2LoginDB('21313@dsfsf.ccds<script>alert(1)</script>','asdsad');
-
-echo $a->GetUsername();
-echo $a->GetPassword();
 
 ?>
