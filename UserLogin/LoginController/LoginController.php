@@ -1,12 +1,14 @@
 <?php
+include __DIR__.'/../../DatabaseInteraction/DatabaseController.php';
 class LoginController{
-    protected $connect;
+    protected $InteractCommentDB;
     protected $username;
     protected $password;
     function __construct(){
         $this->username="NULL";
         $this->password="NULL";
-        $this->connect=null;
+
+        $this->InteractCommentDB= new  DatabaseController();
     }
     function GetUsername(){
         return $this->username;
@@ -22,20 +24,13 @@ class LoginController{
         $dbname="loginDB";
         $username="loginuser";
         $password="password";
-        try{
-            $this->connect=new PDO("mysql:host=$hostname;dbname=$dbname",$username,$password) or die("Can't connect to Database");
-        }
-        catch(PDOException $e){
-            echo"Connection failed: ".$e->getMessage();
-        }    
+        $this->InteractCommentDB->Connect2DB($hostname,$dbname,$username,$password);
     }
     function Disconnect2DB(){
-	$this->connect=null;
+        $this->InteractCommentDB->Disconnect2DB();
     }
 
     
 
 }
-$a=new LoginController();
-$a->Connect2DB();
 ?>
