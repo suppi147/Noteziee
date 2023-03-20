@@ -16,9 +16,10 @@ class FetchComment extends CommentController{
         parent:$this->Connect2DB();
 
         $query="SELECT * FROM CommentTable ORDER BY id DESC";
-        $statement= $this->connect->prepare($query);
-        $statement->execute();
-        $result=$statement->fetchAll();
+        //$statement= $this->connect->prepare($query);
+        //$statement->execute();
+        //$result=$statement->fetchAll();
+        $result=$this->InteractCommentDB->FetchFromDB($query);
         foreach($result as $data){
 			$this->commentPie[$data["id"]]=$data["commentItem"];
 		}

@@ -1,10 +1,12 @@
 <?php
+include __DIR__.'/../DatabaseInteraction/DatabaseController.php';
 class CommentController{
-    protected $connect;
+
+    protected $InteractCommentDB;
     public $indexLocation="http://localhost/Noteziee/CommentUI/index/index.php";
 
     function __construct(){
-        $this->connect=null;
+        $this->InteractCommentDB=new DatabaseController();
     }
 
     function Connect2DB(){
@@ -13,14 +15,14 @@ class CommentController{
         $username="root";
         $password="uitcisco";
         try{
-            $this->connect=new PDO("mysql:host=$hostname;dbname=$dbname",$username,$password) or die("Can't connect to Database");
+            $this->InteractCommentDB->Connect2DB($hostname,$dbname,$username,$password);
         }
         catch(PDOException $e){
             echo"Connection failed: ".$e->getMessage();
         }    
     }
     function Disconnect2DB(){
-	$this->connect=null;
+	$this->InteractCommentDB->Disconnect2DB();
     }
 
 

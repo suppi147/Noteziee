@@ -52,26 +52,18 @@ class DeleteComment extends CommentController{
         if($boxChecker=="true")
             {
                 $query="SELECT EXISTS(SELECT * FROM IDBlock WHERE block=".$this->filterID.")";
-                $statement= $this->connect->prepare($query);
-                $statement->execute();
-                $result=$statement->fetchAll();
+                $result=$this->InteractCommentDB->FetchFromDB($query);
                 foreach($result as $data){
                 if($data[0]==0){
-                $query="INSERT INTO IDBlock(block)VALUES (:block)";
-                $trigger=$this->connect->prepare($query);
-                $trigger->execute(
-                     array(
-                      ':block'=>$this->filterID
-                          )
-                    );
+                    $query='INSERT INTO IDBlock(block)VALUES ("'.$this->filterID.'")';
+                    $this->InteractCommentDB->Update2DB($query);
                 }
             }
                 
         }
         else{
             $query="DELETE FROM IDBlock WHERE block=\"".$this->filterID."\"";
-            $statement= $this->connect->prepare($query);
-            $statement->execute();
+            $this->InteractCommentDB->Update2DB($query);
         }
         
         $this->Disconnect2DB();

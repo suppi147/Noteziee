@@ -20,8 +20,7 @@ class EditComment extends CommentController{
             $this->commentEditing=$this->filterNet->GetItemfiltering();
             $this->idEditing=$this->filterNet->GetIDFiltering();
             $query=" UPDATE CommentTable SET commentItem=\"".$this->commentEditing."\" WHERE id=".$this->idEditing;
-            $trigger=$this->connect->prepare($query);
-            $trigger->execute();
+            $this->InteractCommentDB->Update2DB($query);
         }
         else{
             echo '<script>alert("Comment or ID failed")</script>';
