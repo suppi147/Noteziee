@@ -53,5 +53,21 @@ class DatabaseController{
             echo "Cannot interact with DB.";
         }
     }
+
+    function CheckFromDB($query){
+        if($this->connect !== null){
+            $trigger= $this->connect->prepare($query);
+            $trigger->execute();
+            if($trigger->rowCount()>0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            echo "Cannot interact with DB.";
+        }
+    }
 }
 
