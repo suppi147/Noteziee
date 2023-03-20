@@ -18,22 +18,17 @@ class DeleteComment extends CommentController{
         //id filtering
         
         $query="SELECT * FROM IDBlock";
-        $statement= $this->connect->prepare($query);
-        $statement->execute();
-        $result=$statement->fetchAll();
+        $result=$this->InteractCommentDB->FetchFromDB($query);
         foreach($result as $data){
             array_push($this->filterIDBlock,$data['block']);
             
         }
         $this->filterIDBlock = implode(',',$this->filterIDBlock);
-        echo $this->filterIDBlock;
         $query="DELETE FROM CommentTable WHERE id IN(".$this->filterIDBlock.")";
-        $statement= $this->connect->prepare($query);
-        $statement->execute();
+        $this->InteractCommentDB->Update2DB($query);
 
         $query="DELETE FROM IDBlock";
-        $statement= $this->connect->prepare($query);
-        $statement->execute();
+        $this->InteractCommentDB->Update2DB($query);
 
         //Disconnect DB
         $this->Disconnect2DB();
@@ -59,14 +54,11 @@ class DeleteComment extends CommentController{
                     $this->InteractCommentDB->Update2DB($query);
                 }
             }
-                
         }
         else{
-            $query="DELETE FROM IDBlock WHERE block=\"".$this->filterID."\"";
+            $query='DELETE FROM IDBlock WHERE block='.$this->filterID.'"';
             $this->InteractCommentDB->Update2DB($query);
         }
-        
-        $this->Disconnect2DB();
     }
 }
 ?>
