@@ -7,7 +7,6 @@ class LoginController{
     function __construct(){
         $this->username="NULL";
         $this->password="NULL";
-
         $this->InteractCommentDB= new  DatabaseController();
     }
     function GetUsername(){
@@ -19,14 +18,14 @@ class LoginController{
     }
 
 
-    function Connect2DB(){
+    function Connect2loginDB(){
         $hostname="localhost";
         $dbname="loginDB";
         $username="loginuser";
         $password="password";
         $this->InteractCommentDB->Connect2DB($hostname,$dbname,$username,$password);
     }
-    function Disconnect2DB(){
+    function Disconnect2loginDB(){
         $this->InteractCommentDB->Disconnect2DB();
     }
 
