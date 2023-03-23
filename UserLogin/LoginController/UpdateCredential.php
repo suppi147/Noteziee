@@ -24,9 +24,9 @@ class UpdateCredential extends LoginController{
 
             $this->Disconnect2loginDB();
         }
-            
-        
     }
 
 }
+$a =new UpdateCredential();
+$a->Insert2LoginDB($_POST["email"],$_POST["password"]);
 ?>
