@@ -59,6 +59,7 @@ class DeleteComment extends CommentController{
             $query='DELETE FROM IDBlock WHERE block='.$this->filterID.'"';
             $this->InteractCommentDB->Update2DB($query);
         }
+        $this->Disconnect2DB();
     }
 }
 ?>
