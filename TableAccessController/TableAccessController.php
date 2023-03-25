@@ -49,9 +49,19 @@ class TableAccessController {
 
         $createNewUserQuery='CREATE USER \''.$this->tableName.'\'@\''.$this->hostname.'\' IDENTIFIED BY \''.$this->password.'\'';
         $this->connect2users->Update2DB($createNewUserQuery);
-        
-        $query='CREATE TABLE CommentTable'.$this->tableName.'(id unsigned TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT, commentItem text)';
-        $this->connect2users->Update2DB($query);
+
+        //create table
+        $createUserTableQuery='CREATE TABLE CommentTable'.$this->tableName.'(id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT, commentItem text)';
+        $this->connect2users->Update2DB($createUserTableQuery);
+        $createIDBlockQuery='CREATE TABLE IDBlock'.$this->tableName.'(block varchar(255) NOT NULL)';
+        $this->connect2users->Update2DB($createIDBlockQuery);
+
+        //grant prvilege
+        $grantUserTableQuery='GRANT INSERT,UPDATE,DELETE,SELECT ON CommentDB.CommentTable'.$this->tableName.' TO \''.$this->tableName.'\'@\''.$this->hostname.'\'';
+        $this->connect2users->Update2DB($grantUserTableQuery);
+        $grantIDBlockQuery='GRANT INSERT,UPDATE,DELETE,SELECT ON CommentDB.IDBlock'.$this->tableName.' TO \''.$this->tableName.'\'@\''.$this->hostname.'\'';
+        $this->connect2users->Update2DB($grantIDBlockQuery);
+
         $this->Disconnect2LoginDB();
 
     } 
