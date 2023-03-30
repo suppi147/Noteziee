@@ -21,30 +21,36 @@ class TableAccessController {
         $this->password="uitcisco";
     }
 
-    private function Connect2LoginDB(){
-        
-        $this->connect2users->Connect2DB($this->hostname,$this->dbname,$this->username,$this->password);
+    private function Connect2CommentDB(){
+        $this->connect2users->SetDBInformation($this->hostname,$this->dbname,$this->username,$this->password);
+        $this->connect2users->Connect2DB();
     }
 
-    private function Disconnect2LoginDB(){
+    private function Disconnect2CommentDB(){
         $this->connect2users->Disconnect2DB();
     }
 
 
-    function GetNotingTableID($username,$password){
-        $this->Connect2LoginDB();
-        $query='SELECT noteTableID FROM users WHERE username="'.$username.'" AND password="'.$password.'"';
+    function GetNotingTableID($username){
+        $this->Connect2CommentDB();
+        $query='SELECT noteTableID FROM users WHERE username="'.$username.'"';
         $result=$this->connect2users->FetchFromDB($query);
         foreach($result as $noteTableID){
             $this->tableName=$noteTableID['noteTableID'];
         }
-        $this->Disconnect2LoginDB();
+        $this->Disconnect2CommentDB();
         return $this->tableName;
     }
 
-    function CreateNotingTableForUser(){
+    function GetNotingTablePassword(){
+        return  hash("sha256",HEAD_PASS_LOCK.$this->tableName.TAIL_PASS_LOCK);
+    }
+
+    function CreateNotingTableForUser($tableName){
         $this->dbname="CommentDB";
-        $this->Connect2LoginDB();
+        $this->tableName=$tableName;
+        $this->Connect2CommentDB();
+         
         $this->password=hash("sha256",HEAD_PASS_LOCK.$this->tableName.TAIL_PASS_LOCK);
 
         $createNewUserQuery='CREATE USER \''.$this->tableName.'\'@\''.$this->hostname.'\' IDENTIFIED BY \''.$this->password.'\'';
@@ -62,7 +68,7 @@ class TableAccessController {
         $grantIDBlockQuery='GRANT INSERT,UPDATE,DELETE,SELECT ON CommentDB.IDBlock'.$this->tableName.' TO \''.$this->tableName.'\'@\''.$this->hostname.'\'';
         $this->connect2users->Update2DB($grantIDBlockQuery);
 
-        $this->Disconnect2LoginDB();
+        $this->Disconnect2CommentDB();
 
     } 
 }
