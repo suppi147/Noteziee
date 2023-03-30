@@ -14,13 +14,13 @@ class DatabaseController{
         $this->password="NULL";
     }
 
-    function Connect2DB($hostname,$dbname,$username,$password){
-
+    public function SetDBInformation($hostname,$dbname,$username,$password){
         $this->hostname=$hostname;
         $this->dbname=$dbname;
         $this->username=$username;
         $this->password=$password;
-        
+    }
+    function Connect2DB(){
         try{
             $this->connect=new PDO("mysql:host=$this->hostname;dbname=$this->dbname",$this->username,$this->password) or die("Can't connect to Database");
         }
