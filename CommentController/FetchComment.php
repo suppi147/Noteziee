@@ -15,7 +15,7 @@ class FetchComment extends CommentController{
     function Fetch(){
         parent:$this->Connect2DB();
 
-        $query="SELECT * FROM CommentTable ORDER BY id DESC";
+        $query="SELECT * FROM CommentTable".$_SESSION['username']." ORDER BY id DESC";
         //$statement= $this->connect->prepare($query);
         //$statement->execute();
         //$result=$statement->fetchAll();

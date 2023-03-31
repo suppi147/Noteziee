@@ -15,7 +15,7 @@ class PostComment extends CommentController{
 
         if($this->filterNet->FilterComment($commentCarrier)==true){
             $this->commentContent=$this->filterNet->GetItemfiltering();
-            $query=' INSERT INTO CommentTable(commentItem)VALUES ("'.$this->commentContent.'")';
+            $query=' INSERT INTO CommentTable'.$_SESSION['username'].'(commentItem)VALUES ("'.$this->commentContent.'")';
             //$trigger=$this->connect->prepare($query);
             //$trigger->execute(
             //    array(

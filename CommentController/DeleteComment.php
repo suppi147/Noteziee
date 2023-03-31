@@ -17,17 +17,17 @@ class DeleteComment extends CommentController{
         parent:$this->Connect2DB();
         //id filtering
         
-        $query="SELECT * FROM IDBlock";
+        $query="SELECT * FROM IDBlock".$_SESSION['username'];
         $result=$this->InteractCommentDB->FetchFromDB($query);
         foreach($result as $data){
             array_push($this->filterIDBlock,$data['block']);
             
         }
         $this->filterIDBlock = implode(',',$this->filterIDBlock);
-        $query="DELETE FROM CommentTable WHERE id IN(".$this->filterIDBlock.")";
+        $query="DELETE FROM CommentTable".$_SESSION['username']." WHERE id IN(".$this->filterIDBlock.")";
         $this->InteractCommentDB->Update2DB($query);
 
-        $query="DELETE FROM IDBlock";
+        $query="DELETE FROM IDBlock".$_SESSION['username'];
         $this->InteractCommentDB->Update2DB($query);
 
         //Disconnect DB
@@ -46,17 +46,17 @@ class DeleteComment extends CommentController{
             }    
         if($boxChecker=="true")
             {
-                $query="SELECT EXISTS(SELECT * FROM IDBlock WHERE block=".$this->filterID.")";
+                $query="SELECT EXISTS(SELECT * FROM IDBlock".$_SESSION['username']." WHERE block=".$this->filterID.")";
                 $result=$this->InteractCommentDB->FetchFromDB($query);
                 foreach($result as $data){
                 if($data[0]==0){
-                    $query='INSERT INTO IDBlock(block)VALUES ("'.$this->filterID.'")';
+                    $query='INSERT INTO IDBlock'.$_SESSION['username'].'(block)VALUES ("'.$this->filterID.'")';
                     $this->InteractCommentDB->Update2DB($query);
                 }
             }
         }
         else{
-            $query='DELETE FROM IDBlock WHERE block='.$this->filterID.'"';
+            $query='DELETE FROM IDBlock'.$_SESSION['username'].' WHERE block='.$this->filterID.'"';
             $this->InteractCommentDB->Update2DB($query);
         }
         $this->Disconnect2DB();

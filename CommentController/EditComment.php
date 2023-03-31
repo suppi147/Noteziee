@@ -19,7 +19,7 @@ class EditComment extends CommentController{
         if($this->filterNet->FilterComment($commentCarrier)==true && $this->filterNet->FilterID($commentID)==true){
             $this->commentEditing=$this->filterNet->GetItemfiltering();
             $this->idEditing=$this->filterNet->GetIDFiltering();
-            $query=" UPDATE CommentTable SET commentItem=\"".$this->commentEditing."\" WHERE id=".$this->idEditing;
+            $query=" UPDATE CommentTable".$_SESSION['username']." SET commentItem=\"".$this->commentEditing."\" WHERE id=".$this->idEditing;
             $this->InteractCommentDB->Update2DB($query);
         }
         else{

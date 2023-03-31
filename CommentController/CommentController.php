@@ -2,7 +2,7 @@
 include __DIR__.'/../DatabaseInteraction/DatabaseController.php';
 class CommentController{
 
-    protected $InteractCommentDB;
+    public $InteractCommentDB;
     public $indexLocation="http://localhost/Noteziee/CommentUI/index/index.php";
 
     function __construct(){
@@ -10,12 +10,9 @@ class CommentController{
     }
 
     function Connect2DB(){
-        $hostname="localhost";
-        $dbname="CommentDB";
-        $username="root";
-        $password="uitcisco";
+     
         try{
-            $this->InteractCommentDB->Connect2DB($hostname,$dbname,$username,$password);
+            $this->InteractCommentDB->Connect2DB();
         }
         catch(PDOException $e){
             echo"Connection failed: ".$e->getMessage();
