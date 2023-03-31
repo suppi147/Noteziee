@@ -4,14 +4,14 @@
 - Noteziee is commenting system for memorizing purposes and interacting between environments for example OS with virtual OS.
 
 ### Ability
-- API
-- Previlege retriction
-- Add users
-- upload files and images for admin
+- user with separate noting area
 
 ### Development Model
 ![](https://i.imgur.com/aGnF1BX.png)
 
+### Future development
+- session full control
+- Previlege retriction
 
 ### Technology used
 - Backend
