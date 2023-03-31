@@ -15,13 +15,14 @@ class PostComment extends CommentController{
 
         if($this->filterNet->FilterComment($commentCarrier)==true){
             $this->commentContent=$this->filterNet->GetItemfiltering();
-            $query=" INSERT INTO CommentTable(commentItem)VALUES (:commentItem)";
-            $trigger=$this->connect->prepare($query);
-            $trigger->execute(
-                array(
-                    ':commentItem'=>$this->commentContent
-                )
-            );
+            $query=' INSERT INTO CommentTable'.$_SESSION['username'].'(commentItem)VALUES ("'.$this->commentContent.'")';
+            //$trigger=$this->connect->prepare($query);
+            //$trigger->execute(
+            //    array(
+            //        ':commentItem'=>$this->commentContent
+            //    )
+            //);
+            $this->InteractCommentDB->Update2DB($query);
         }
         
         $this->Disconnect2DB();

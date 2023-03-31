@@ -9,20 +9,16 @@ class SelectAllComment extends CommentController{
     function SelectAllIDStackUp($boxChecker){
         parent:$this->Connect2DB();
         if($boxChecker=="true"){
-            $query="SELECT id FROM CommentTable";
-            $statement= $this->connect->prepare($query);
-            $statement->execute();
-            $result=$statement->fetchAll();
+            $query="SELECT id FROM CommentTable".$_SESSION['username'];
+            $result=$this->InteractCommentDB->FetchFromDB($query);
             foreach($result as $data){
-                $query="INSERT INTO IDBlock(block)VALUES (".$data['id'].")";
-                $trigger=$this->connect->prepare($query);
-                $trigger->execute();
+                $query="INSERT INTO IDBlock".$_SESSION['username']."(block)VALUES (".$data['id'].")";
+                $this->InteractCommentDB->Update2DB($query);
             }
         }
         else{
-            $query="DELETE FROM IDBlock";
-            $statement= $this->connect->prepare($query);
-            $statement->execute();
+            $query="DELETE FROM IDBlock".$_SESSION['username'];
+            $this->InteractCommentDB->Update2DB($query);
         }
         
         $this->Disconnect2DB();

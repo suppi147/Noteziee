@@ -1,40 +1,34 @@
-# Noteziee 1.1
+# Noteziee 2.0
 
 ### Introduction
 - Noteziee is commenting system for memorizing purposes and interacting between environments for example OS with virtual OS.
 
 ### Ability
-- Allow any comment including coding syntax
-- Easy to see and interact comment layout
-- Capable of edit notes
-- Multiple delete notes
-- Convenient Copy button
+- user with separate noting area
 
-### Future Development
-- API
+### Development Model
+![](https://i.imgur.com/aGnF1BX.png)
+
+###Result
+- login form and db
+![](https://i.imgur.com/V0iu3Tg.png)
+![image](https://user-images.githubusercontent.com/97881547/229132616-1956e68d-f836-48a2-aba3-493545c43344.png)
+- success in create separate tables and MySQL users
+
+![image](https://user-images.githubusercontent.com/97881547/229138097-fa03931a-1829-4dac-a909-409835b7131d.png)
+![image](https://user-images.githubusercontent.com/97881547/229138327-5cf36f23-a00c-4f6d-9324-4a2521477c8c.png)
+
+### Future development
+- session full control
 - Previlege retriction
-- Add users
-- upload files and images for admin
 
 ### Technology used
 - Backend
     - PHP
 - Frontend
     - bootstrap 4
+    - SCSS
+    - html
+    - Javascript
 - Database
     - MySQL
-
-### Result
-- Homepage:
-    - ![](https://i.imgur.com/KBEp8q0.png)
-    - ![](https://i.imgur.com/mjYJBGU.png)
-    - ![](https://i.imgur.com/DPfy0wt.png)
-    - ![](https://i.imgur.com/CHoqH0X.png)
-
-- Noteziee:
-    - ![](https://i.imgur.com/eUjzJfh.png)
-    - ![](https://i.imgur.com/RIws1LN.png)
-    - ![](https://i.imgur.com/hE1HwZo.png)
-
-  
-

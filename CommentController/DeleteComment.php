@@ -17,23 +17,18 @@ class DeleteComment extends CommentController{
         parent:$this->Connect2DB();
         //id filtering
         
-        $query="SELECT * FROM IDBlock";
-        $statement= $this->connect->prepare($query);
-        $statement->execute();
-        $result=$statement->fetchAll();
+        $query="SELECT * FROM IDBlock".$_SESSION['username'];
+        $result=$this->InteractCommentDB->FetchFromDB($query);
         foreach($result as $data){
             array_push($this->filterIDBlock,$data['block']);
             
         }
         $this->filterIDBlock = implode(',',$this->filterIDBlock);
-        echo $this->filterIDBlock;
-        $query="DELETE FROM CommentTable WHERE id IN(".$this->filterIDBlock.")";
-        $statement= $this->connect->prepare($query);
-        $statement->execute();
+        $query="DELETE FROM CommentTable".$_SESSION['username']." WHERE id IN(".$this->filterIDBlock.")";
+        $this->InteractCommentDB->Update2DB($query);
 
-        $query="DELETE FROM IDBlock";
-        $statement= $this->connect->prepare($query);
-        $statement->execute();
+        $query="DELETE FROM IDBlock".$_SESSION['username'];
+        $this->InteractCommentDB->Update2DB($query);
 
         //Disconnect DB
         $this->Disconnect2DB();
@@ -51,29 +46,19 @@ class DeleteComment extends CommentController{
             }    
         if($boxChecker=="true")
             {
-                $query="SELECT EXISTS(SELECT * FROM IDBlock WHERE block=".$this->filterID.")";
-                $statement= $this->connect->prepare($query);
-                $statement->execute();
-                $result=$statement->fetchAll();
+                $query="SELECT EXISTS(SELECT * FROM IDBlock".$_SESSION['username']." WHERE block=".$this->filterID.")";
+                $result=$this->InteractCommentDB->FetchFromDB($query);
                 foreach($result as $data){
                 if($data[0]==0){
-                $query="INSERT INTO IDBlock(block)VALUES (:block)";
-                $trigger=$this->connect->prepare($query);
-                $trigger->execute(
-                     array(
-                      ':block'=>$this->filterID
-                          )
-                    );
+                    $query='INSERT INTO IDBlock'.$_SESSION['username'].'(block)VALUES ("'.$this->filterID.'")';
+                    $this->InteractCommentDB->Update2DB($query);
                 }
             }
-                
         }
         else{
-            $query="DELETE FROM IDBlock WHERE block=\"".$this->filterID."\"";
-            $statement= $this->connect->prepare($query);
-            $statement->execute();
+            $query='DELETE FROM IDBlock'.$_SESSION['username'].' WHERE block='.$this->filterID.'"';
+            $this->InteractCommentDB->Update2DB($query);
         }
-        
         $this->Disconnect2DB();
     }
 }

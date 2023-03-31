@@ -75,8 +75,9 @@ require_once("SelectAllButton.php");
 require_once("CopyButton.php");
 define("MAX_COMMENTLINE",6);
 define("MAX_LETTER",435);
-    $showerPack= new FetchComment();
 
+    session_start();
+    $showerPack= new FetchComment();
     $commentBoxTrigger= new BoxCommentController();
     $deleteButtonTrigger=new DeleteButton();
     $editButtonTrigger=new EditButton();
@@ -84,7 +85,7 @@ define("MAX_LETTER",435);
     $checkBoxTrigger=new CheckBox();
     $selectAllButtonTrigger=new SelectAllButton();
     $copyButtonTrigger=new CopyButton();
-
+    $showerPack->InteractCommentDB->SetDBInformation("localhost","CommentDB",$_SESSION['username'],$_SESSION['password']);
     foreach( $showerPack->Fetch() as $commentID=> $commentShow){
         $commentBoxTrigger->AddPackHeader($checkBoxTrigger->CheckBoxPack($commentID));
         $commentBoxTrigger->AddButtons2Pack($selectAllButtonTrigger->SelectAllButtonPack());
