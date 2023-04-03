@@ -4,13 +4,8 @@
 - Noteziee is commenting system for memorizing purposes and interacting between environments for example OS with virtual OS.
 
 ### Requirement
-- sign up, sign in functionality
-- session control
-- user account area
-- change password,email
 - Oauth
-- delete account
-- email verification
+- session control
 - comment limit control
 - robot check
 
