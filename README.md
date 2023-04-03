@@ -8,6 +8,7 @@
 - session control
 - user private account area
 - change password,email
+- delete account
 - email verification
 - comment limit control
 - robot check
