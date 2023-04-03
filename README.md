@@ -5,6 +5,7 @@
 
 ### Requirement
 - Oauth
+- admin login page
 - session control
 - comment limit control
 - robot check
