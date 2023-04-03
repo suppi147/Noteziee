@@ -10,7 +10,7 @@
 - robot check
 
 ### Development Model
-- Design sign up page
+- Design Oauth page
 - Design user account area
 ### Future development
 - API
