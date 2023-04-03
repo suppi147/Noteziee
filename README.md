@@ -6,7 +6,7 @@
 ### Requirement
 - sign up, sign in functionality
 - session control
-- user private account area
+- user account area
 - change password,email
 - delete account
 - email verification
@@ -14,7 +14,8 @@
 - robot check
 
 ### Development Model
-
+- Design sign up page
+- Design user account area
 ### Future development
 - API
 
