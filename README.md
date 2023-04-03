@@ -8,6 +8,7 @@
 - session control
 - user account area
 - change password,email
+- Oauth
 - delete account
 - email verification
 - comment limit control
