@@ -40,6 +40,14 @@
                        <ul>
                            <li><a href="http://localhost/Noteziee/Homepage">Home</a></li>
                            <li><a href="#contact">About Noteziee</a></li>
+                           <li>
+                            <div class="dropdown">
+                                <a href="#"><img src="http://localhost/Noteziee/Homepage/assets/images/logout.png" alt="" style="margin-top: -20px;"></a>
+                                <div class="dropdown-content">
+                                  <a href="#" style="color:#141414;">Logout</a>
+                                </div>
+                              </div>
+                           </li>
                        </ul>
                    </div>
               </div>
