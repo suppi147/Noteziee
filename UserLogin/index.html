@@ -12,7 +12,7 @@
 <body>
   <div class="login-root">
     <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
-      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">\
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
           <div class="form-center">
             <a class="a" href="http://localhost/Noteziee/Homepage/" rel="dofollow">
@@ -25,9 +25,25 @@
            <div  class="formbg col-md-7 text-part" >
             <div class="formbg-inner padding-horizontal--48">
               <span class="padding-bottom--15">Sign in to your account</span>
-              <form action="http://localhost/Noteziee/UserLogin/LoginController/UpdateCredential.php" name="loginForm" method="POST" id="loginID">      
+              <form action="http://localhost/Noteziee/UserLogin/LoginController/UpdateCredential.php" name="loginForm" method="POST" id="loginID">
                 <div class="field padding-bottom--24">
-                  <input type="submit" name="control_flag" value="Google Account">
+                  <label for="email">Email</label>
+                  <input type="email" name="email">
+                </div>
+                <div class="field padding-bottom--24">
+                  <div class="grid--50-50">
+                    <label for="password">Password</label>
+                    <div class="reset-pass">
+                      <a href="#">Forgot your password?</a>
+                    </div>
+                  </div>
+                  <input type="password" name="password">
+                </div>
+                <div class="field padding-bottom--24">
+                  <input type="submit" name="control_flag" value="login">
+                </div>
+                <div class="field">
+                  <a class="ssolink" href="#">Use single sign-on (Google) instead</a>
                 </div>
               </form>
             </div>
@@ -36,7 +52,7 @@
         
           </div>
           <div class="footer-link padding-top--24">
-            <span style="color: #f2f2f2;">I know you are questioning why I use Oauth!? Well, nothing personal, It's just me liking It.</span>
+            <span style="color: #f2f2f2;">Don't have an account? <a class="a" href="">Sign up</a></span>
           </div>
         </div>
       </div>
