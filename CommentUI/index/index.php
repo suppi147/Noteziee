@@ -29,8 +29,8 @@
               <div class="row">
                    <div class="col-lg-3 col-md-12 logo">
                     
-                       <a href="http://localhost/Noteziee/Homepage/"><img class="white" src="http://localhost/Noteziee/Homepage/assets/images/logo.png" alt=""></a>
-                       <a href="http://localhost/Noteziee/Homepage/"><img class="gray" src="http://localhost/Noteziee/Homepage/assets/images/logo-gray.png" alt=""></a>
+                       <a href="#"><img class="white" src="http://localhost/Noteziee/Homepage/assets/images/logo.png" alt=""></a>
+                       <a href="#"><img class="gray" src="http://localhost/Noteziee/Homepage/assets/images/logo-gray.png" alt=""></a>
 
                        <a class="small-menu" class="d-lg-none" data-toggle="collapse" data-target="#menu" href="#menu" >
                            <i  class="fas d-lg-none fa-bars"></i>
@@ -38,16 +38,8 @@
                    </div>
                    <div id="menu" class="col-lg-9 d-none d-lg-block navigation">
                        <ul>
-                           <li><a href="http://localhost/Noteziee/Homepage">Home</a></li>
-                           <li><a href="#contact">About Noteziee</a></li>
-                           <li>
-                            <div class="dropdown">
-                                <a href="#"><img src="http://localhost/Noteziee/Homepage/assets/images/logout.png" alt="" style="margin-top: -20px;"></a>
-                                <div class="dropdown-content">
-                                  <a href="#" style="color:#141414;">Logout</a>
-                                </div>
-                              </div>
-                           </li>
+                           <li><a href="#">Home</a></li>
+                           <li><a href="http://localhost/Noteziee/UserLogin/LoginController/Logout.php">Logout</a></li>                    
                        </ul>
                    </div>
               </div>
