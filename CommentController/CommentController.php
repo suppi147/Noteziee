@@ -3,7 +3,7 @@ include __DIR__.'/../DatabaseInteraction/DatabaseController.php';
 class CommentController{
 
     public $InteractCommentDB;
-    public $indexLocation="http://localhost/Noteziee/CommentUI/index/index.php";
+    public $indexLocation="http://localhost/Noteziee/CommentUI/index/";
 
     function __construct(){
         $this->InteractCommentDB=new DatabaseController();
