@@ -43,7 +43,7 @@ $client->addScope('email');
             <img src="http://localhost/Noteziee/UserLogin/assets/images/g.png" style="margin-left: 160px;margin-top: -10px;" alt=""></a>
               <form action=<?php echo $client->createAuthUrl();?> name="loginForm" method="POST" id="loginID">      
                 <div class="field padding-bottom--24">
-                  <input type="submit" name="control_flag" value="Sign in with Google Account" style="margin-top: 15px;">
+                  <input type="submit" name="control_flag" value="Sign in with Google Account" style="margin-top: 20px;">
                   
                 </div>
               </form>
@@ -53,7 +53,7 @@ $client->addScope('email');
         
           </div>
           <div class="footer-link padding-top--24">
-            <span style="color: #f2f2f2;">I know you are questioning why I use OAuth!? Well, nothing personal, It's just me liking It.</span>
+            <span style="color: #f2f2f2;">Google use OAuth to login almost anything that's belong to Google... Including Noteziee ;3</span>
           </div>
         </div>
       </div>
