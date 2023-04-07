@@ -22,7 +22,7 @@ if($_GET['code']){
     $googleAccountIn4= $gauth->userinfo->get();
 
     $email=$googleAccountIn4->email;
-    $a =new UpdateCredential();
-    $a->Insert2LoginDB($email);
+    $addEmail =new UpdateCredential();
+    $addEmail->Insert2LoginDB($email);
 }
 ?>
