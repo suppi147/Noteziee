@@ -7,20 +7,6 @@ class FilterCredential extends LoginController{
         parent::__construct();
     }
 
-    function FilterEmail(){
-        if(!(filter_var($this->username, FILTER_VALIDATE_EMAIL))){
-            echo 'email invalid';
-            exit();
-        }
-    }
-
-
-    function bcryptHash(){
-        $options = [
-            'cost' => 12
-        ];
-        $this->password = password_hash($this->password, PASSWORD_BCRYPT, $options);
-    }
 
     function CheckRecordExist(){
         $this->Connect2loginDB();
@@ -30,16 +16,16 @@ class FilterCredential extends LoginController{
         return $Checkflag;
     }
 
-    function FilterEmailPassword($username,$password){
+    function FilterEmail($username){
         $characterFilterEmail= new FilterComment();
-        $characterFilterPassword= new FilterComment();
-        if($characterFilterEmail->FilterComment($username) && $characterFilterPassword->FilterComment($password)){
+        if($characterFilterEmail->FilterComment($username)){
             $this->username = $characterFilterEmail->GetItemfiltering();    
-            $this->password = $characterFilterPassword->GetItemfiltering();   
         }
 
-        $this->FilterEmail();
-        $this->bcryptHash();
+        if(!(filter_var($this->username, FILTER_VALIDATE_EMAIL))){
+            echo 'email invalid';
+            exit();
+        }
     }
 }
 ?>
