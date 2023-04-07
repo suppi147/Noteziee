@@ -14,7 +14,7 @@ class UpdateCredential extends LoginController{
         parent::__construct();
     }
 
-    function Insert2LoginDB($username,$password){
+    function Insert2LoginDB($username,$password=0){
 
         $filter= new FilterCredential();
         $filter->FilterEmailPassword($username,$password);
@@ -44,6 +44,4 @@ class UpdateCredential extends LoginController{
     }
 
 }
-$a =new UpdateCredential();
-$a->Insert2LoginDB($_POST["email"],$_POST["password"]);
 ?>
