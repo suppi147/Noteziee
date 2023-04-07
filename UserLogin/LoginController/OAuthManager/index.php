@@ -39,11 +39,12 @@ $client->addScope('email');
         <div class="row">
             
            <div  class="formbg col-md-7 text-part" >
-            <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Sign in to your account</span>
+            <div class="formbg-inner padding-horizontal--48" style="padding-bottom: 26px;">
+            <img src="http://localhost/Noteziee/UserLogin/assets/images/g.png" style="margin-left: 160px;margin-top: -10px;" alt=""></a>
               <form action=<?php echo $client->createAuthUrl();?> name="loginForm" method="POST" id="loginID">      
                 <div class="field padding-bottom--24">
-                  <input type="submit" name="control_flag" value="Google Account">
+                  <input type="submit" name="control_flag" value="Sign in with Google Account" style="margin-top: 15px;">
+                  
                 </div>
               </form>
             </div>
@@ -52,7 +53,7 @@ $client->addScope('email');
         
           </div>
           <div class="footer-link padding-top--24">
-            <span style="color: #f2f2f2;">I know you are questioning why I use Oauth!? Well, nothing personal, It's just me liking It.</span>
+            <span style="color: #f2f2f2;">I know you are questioning why I use OAuth!? Well, nothing personal, It's just me liking It.</span>
           </div>
         </div>
       </div>
