@@ -21,6 +21,10 @@ class FilterComment{
         
         $commentUnfilter=str_replace("<xmp>","<p>",$commentUnfilter);
         $commentUnfilter=str_replace("</xmp>","</p>",$commentUnfilter);
+        $commentUnfilter=str_replace('',"</p>",$commentUnfilter);
+        $commentUnfilter= stripslashes($commentUnfilter);
+        if (strlen(trim($commentUnfilter)) == 0)
+            return false;
         $this->itemFiltering=htmlspecialchars($commentUnfilter, ENT_QUOTES, 'UTF-8');
         return true;
     } 
