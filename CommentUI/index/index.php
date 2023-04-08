@@ -93,24 +93,7 @@ define("MAX_LETTER",435);
         $commentBoxTrigger->AddButtons2Pack($editButtonTrigger->EditButtonPack($commentShow,$commentID));
         $commentBoxTrigger->AddButtons2Pack($copyButtonTrigger->CopyButtonPack($commentID,$commentShow));
         if(substr_count($commentShow,"\n")>MAX_COMMENTLINE or strlen($commentShow)>MAX_LETTER){
-            $commentBoxTrigger->AddButtons2Pack($modalButtonTrigger->ModalButtonPack($commentShow));
-            if(substr_count($commentShow,"\n")>MAX_COMMENTLINE ){
-                $showMore=explode("\n", $commentShow);
-                $commentShow="";
-                for ($i=0; $i < MAX_COMMENTLINE; $i++) { 
-                    if($i==MAX_COMMENTLINE-1){
-                        $commentShow=$commentShow.$showMore[$i]."\n";
-                        break;
-                    }
-                    $commentShow=$commentShow.$showMore[$i]."\n";
-                }
-                $commentShow=$commentShow.".....";
-            }
-            if(strlen($commentShow)>MAX_LETTER){
-                $commentShow=substr($commentShow,0,MAX_LETTER-100);
-                $commentShow=$commentShow.".....";
-            }
-            
+            $commentBoxTrigger->AddButtons2Pack($modalButtonTrigger->ModalButtonPack($commentShow));        
         }
         $commentBoxTrigger->AddButtons2Pack($checkBoxTrigger->CheckBoxPack($commentID));
         

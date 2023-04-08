@@ -13,16 +13,15 @@ if(strcmp($_POST["control_flag"],"post")==0){
      $postTrigger->InteractCommentDB->SetDBInformation("localhost","CommentDB",$_SESSION['username'],$_SESSION['password']);
      $postTrigger->Post($_POST["commentContent"]);
 }
-else if( strcmp($_POST["control_flag"],"delete")==0 or strcmp($_POST["control_flag"],"select")==0){
+else if( strcmp($_POST["control_flag"],"delete")==0){
      $postTrigger=new DeleteComment();
-     //$postTrigger->Delete($_POST["id"]);
      $postTrigger->InteractCommentDB->SetDBInformation("localhost","CommentDB",$_SESSION['username'],$_SESSION['password']);
-     if(strcmp($_POST["control_flag"],"select")==0){
-          $postTrigger->DeleteIDStackUp($_POST["id"],$_POST["checker"]);
-     }
-     else if(strcmp($_POST["control_flag"],"delete")==0){
-          $postTrigger->Delete();
-     }
+     $postTrigger->Delete();
+}
+else if(strcmp($_POST["control_flag"],"select")==0){
+     $postTrigger=new DeleteComment();
+     $postTrigger->InteractCommentDB->SetDBInformation("localhost","CommentDB",$_SESSION['username'],$_SESSION['password']);
+     $postTrigger->DeleteIDStackUp($_POST["id"],$_POST["checker"]);
 }
 else if(strcmp($_POST["control_flag"],"selectAll")==0){
      $postTrigger=new SelectAllComment();
