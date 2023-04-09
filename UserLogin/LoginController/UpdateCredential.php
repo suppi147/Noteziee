@@ -1,7 +1,6 @@
 <?php
 require_once("FilterCredential.php");
 require_once("LoginController.php");
-require_once("SessionManager.php");
 include __DIR__.'/../../TableAccessController/TableAccessController.php';
 
 class UpdateCredential extends LoginController{
