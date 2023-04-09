@@ -1,5 +1,5 @@
 <?php
-require_once('OAuthManager.php');
+include __DIR__.'/OAuthManager/OAuthManager.php';
 ?>
 
 
