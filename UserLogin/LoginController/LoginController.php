@@ -11,7 +11,6 @@ class LoginController{
         $this->username="NULL";
         $this->password="NULL";
         $this->InteractCommentDB= new DatabaseController();
-        $this->session= new SessionManager();
     }
     function GetUsername(){
         return $this->username;

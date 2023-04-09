@@ -22,25 +22,19 @@ class UpdateCredential extends LoginController{
 
         
         
-        if($filter->CheckRecordExist()){
-            $this->session->StartSession();    
-            $_SESSION['username']=$this->userNoteTable->GetNotingTableID($this->username);
-            $_SESSION['password']=$this->userNoteTable->GetNotingTablePassword();
-            header("location: http://localhost/Noteziee/CommentUI/index/");
-        }
-        else{
+        if(!($filter->CheckRecordExist())){
             $this->Connect2loginDB();
             $this->noteTableID=uniqid();
             $query='INSERT INTO users(username,noteTableID) VALUES ("'.$this->username.'","'.$this->noteTableID.'")';
             $this->InteractCommentDB->Update2DB($query);
             $this->userNoteTable->CreateNotingTableForUser($this->noteTableID);
-            $this->session->StartSession();
             $this->Disconnect2loginDB();
-            $_SESSION['username']=$this->userNoteTable->GetNotingTableID($this->username);
-            $_SESSION['password']=$this->userNoteTable->GetNotingTablePassword();
-            header("location: http://localhost/Noteziee/CommentUI/index/");
         }
-        
+
+        session_start();
+        $_SESSION['username']=$this->userNoteTable->GetNotingTableID($this->username);
+        $_SESSION['password']=$this->userNoteTable->GetNotingTablePassword();
+        header("location: http://localhost/Noteziee/CommentUI/index/");
     }
 
 }
