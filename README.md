@@ -5,16 +5,11 @@
 
 ### Requirement
 - Oauth
-- admin login page
-- session control
-- comment limit control
-- robot check
-
+- homebrew API
 ### Development Model
-- Design Oauth page
-- Design user account area
+- 
 ### Future development
-- API
+- Secure testing and limitation
 
 ### Technology used
 - Backend
