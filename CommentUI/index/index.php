@@ -47,7 +47,7 @@
       </header>
       <div class="slider container-fluid">
       <div class="container">
-      <form action="http://localhost/Noteziee/MainController/MainRail.php" name="submitForm" method="POST" id="commentID" onclick="ReceiveEnter();">
+      <form action="http://localhost/Noteziee/ZieeAPI/ZieeAPI.php" name="submitForm" method="POST" id="commentID" onclick="ReceiveEnter();">
                 <div class="form-group">
                  <textarea name="commentContent" id="commentContent" class="textarea-edit" placeholder="Enter Something :3" rows="10" cols="60"></textarea>
                 </div>

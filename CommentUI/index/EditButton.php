@@ -33,7 +33,7 @@ class EditButton extends ModalButton{
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <form action="http://localhost/Noteziee/MainController/MainRail.php" method="POST" id="commentID">
+                        <form action="http://localhost/Noteziee/ZieeAPI/ZieeAPI.php" method="POST" id="commentID">
                         <div class="form-group">
                         <textarea type="text" name="commentContent" id="'.$this->textareaID.'" rows="25" cols="77">';
         $this->modalButtonTailer='</textarea>
