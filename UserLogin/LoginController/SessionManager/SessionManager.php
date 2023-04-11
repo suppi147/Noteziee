@@ -4,8 +4,17 @@ class SessionManager{
 
     }
 
-    function SessionRegenerate(){
-        session_regenerate_id();
+    function SessionStart(){
+        // Set the session cookie parameters
+        session_set_cookie_params([
+            'lifetime' => 604800,
+            'path' => '/Noteziee/CommentUI/index/',
+            'domain' => 'localhost',
+            'secure' => true,
+            'httponly' => true,
+            'samesite' => 'Strict'
+        ]);
+        session_start();
     }
 
     function SessionDelete(){
