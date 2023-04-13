@@ -6,14 +6,20 @@ class SessionManager{
 
     function SessionStart(){
         // Set the session cookie parameters
-        session_set_cookie_params([
-            'lifetime' => 604800,
-            'path' => '/Noteziee/CommentUI/index/',
-            'domain' => 'localhost',
-            'secure' => true,
-            'httponly' => true,
-            'samesite' => 'Strict'
-        ]);
+        $sessionParams = session_get_cookie_params();
+        $sessionParams["httponly"] = true;
+        $sessionParams["lifetime"]=2;
+        ini_set('session.cookie_samesite', 'Lax');
+
+        // Set the session cookie parameters
+        session_set_cookie_params(
+            $sessionParams["lifetime"],
+            $sessionParams["path"],
+            $sessionParams["domain"],
+            $sessionParams["secure"],
+            $sessionParams["httponly"]
+        );
+
         session_start();
     }
 

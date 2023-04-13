@@ -31,7 +31,6 @@ include __DIR__.'/OAuthManager/OAuthManager.php';
               <form action=<?php echo $client->createAuthUrl();?> name="loginForm" method="POST" id="loginID">      
                 <div class="field padding-bottom--24">
                   <input type="submit" name="control_flag" value="Sign in with Google Account" style="margin-top: 20px;">
-                  
                 </div>
               </form>
             </div>

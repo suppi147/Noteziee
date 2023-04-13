@@ -66,7 +66,7 @@
 include __DIR__.'/../../CommentController/FetchComment.php';
 include __DIR__.'/../../CommentController/DeleteComment.php';
 include __DIR__.'/../../CommentController/EditComment.php';
-//include __DIR__.'/../../UserLogin/LoginController/SessionManager/SessionManager.php';
+include __DIR__.'/../../UserLogin/LoginController/SessionManager/SessionManager.php';
 require_once("BoxCommentController.php");
 require_once("DeleteButton.php");
 require_once("EditButton.php");
@@ -77,9 +77,9 @@ require_once("CopyButton.php");
 define("MAX_COMMENTLINE",6);
 define("MAX_LETTER",435);
 
-    //$sessionManager=new SessionManager();
-    //$sessionManager->SessionStart();
-    session_start();
+    $sessionManager= new SessionManager();
+    $sessionManager->SessionStart();
+
     $showerPack= new FetchComment();
     $commentBoxTrigger= new BoxCommentController();
     $deleteButtonTrigger=new DeleteButton();

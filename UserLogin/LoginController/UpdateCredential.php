@@ -30,8 +30,9 @@ class UpdateCredential extends LoginController{
             $this->Disconnect2loginDB();
         }
 
-        $this->session->SessionStart();
-        
+        $sessionManager= new SessionManager();
+        $sessionManager->SessionStart();
+       
         $_SESSION['username']=$this->userNoteTable->GetNotingTableID($this->username);
         $_SESSION['password']=$this->userNoteTable->GetNotingTablePassword();
         header("location: http://localhost/Noteziee/CommentUI/index/");

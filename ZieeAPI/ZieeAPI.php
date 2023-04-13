@@ -4,9 +4,10 @@ include __DIR__.'/../CommentController/PostComment.php';
 include __DIR__.'/../CommentController/DeleteComment.php';
 include __DIR__.'/../CommentController/EditComment.php';
 include __DIR__.'/../CommentController/SelectAllComment.php';
-include __DIR__.'/../../UserLogin/LoginController/SessionManager/SessionManager.php';
+include __DIR__.'/../UserLogin/LoginController/SessionManager/SessionManager.php';
 $sessionManager=new SessionManager();
 $sessionManager->SessionStart();
+
 $controller= new CommentController();
 switch($_POST["control_flag"]){
      case 'post':{
