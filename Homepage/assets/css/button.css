@@ -111,9 +111,9 @@
   #circle {
       width: 11rem;
       border-radius: 10px;
-      border: 3px solid #ffb703;
+      border: 3px solid #7154e0;
       background: none;
-      color: #ffb703;
+      color: #7154e0;
       position: relative;
       overflow: hidden;
       transition: background 800ms ease, color 800ms ease, transform 500ms ease;
@@ -123,7 +123,7 @@
       content: "";
       width: 100%;
       height: 11rem;
-      background: #ffb703;
+      background: #7154e0;
       position: absolute;
       left: 0;
       top: 110%;
@@ -137,7 +137,7 @@
   }
   
   #circle:hover {
-      background: #ffb703;
+      background: #7154e0;
       color: #fff;
   }
   
