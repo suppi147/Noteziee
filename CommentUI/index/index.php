@@ -77,9 +77,13 @@ require_once("CopyButton.php");
 define("MAX_COMMENTLINE",6);
 define("MAX_LETTER",435);
 
+    
     $sessionManager= new SessionManager();
     $sessionManager->SessionStart();
 
+    if($sessionManager->IsSessionExpired()){
+        header("location: http://localhost/Noteziee/SomethingGoesWrong/403/");
+    }
     $showerPack= new FetchComment();
     $commentBoxTrigger= new BoxCommentController();
     $deleteButtonTrigger=new DeleteButton();

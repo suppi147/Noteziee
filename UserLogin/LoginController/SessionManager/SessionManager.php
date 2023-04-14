@@ -8,7 +8,7 @@ class SessionManager{
         // Set the session cookie parameters
         $sessionParams = session_get_cookie_params();
         $sessionParams["httponly"] = true;
-        $sessionParams["lifetime"]=2;
+        $sessionParams["lifetime"]=5;
         ini_set('session.cookie_samesite', 'Lax');
 
         // Set the session cookie parameters
@@ -22,7 +22,12 @@ class SessionManager{
 
         session_start();
     }
-
+    function IsSessionExpired(){
+        if(!isset($_SESSION['username'])&&!isset($_SESSION['password']))
+            return true;
+        else
+            return false;
+    }
     function SessionDelete(){
         $_SESSION = array(); // unset all session variables
 
