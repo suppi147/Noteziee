@@ -8,7 +8,7 @@ class SessionManager{
         // Set the session cookie parameters
         $sessionParams = session_get_cookie_params();
         $sessionParams["httponly"] = true;
-        $sessionParams["lifetime"]=5;
+        $sessionParams["lifetime"]=500;
         ini_set('session.cookie_samesite', 'Lax');
 
         // Set the session cookie parameters
@@ -24,9 +24,7 @@ class SessionManager{
     }
     function IsSessionExpired(){
         if(!isset($_SESSION['username'])&&!isset($_SESSION['password']))
-            return true;
-        else
-            return false;
+        header("location: http://localhost/Noteziee/SomethingGoesWrong/403/");
     }
     function SessionDelete(){
         $_SESSION = array(); // unset all session variables

@@ -7,6 +7,7 @@ include __DIR__.'/../CommentController/SelectAllComment.php';
 include __DIR__.'/../UserLogin/LoginController/SessionManager/SessionManager.php';
 $sessionManager=new SessionManager();
 $sessionManager->SessionStart();
+$sessionManager->IsSessionExpired();
 
 $controller= new CommentController();
 switch($_POST["control_flag"]){

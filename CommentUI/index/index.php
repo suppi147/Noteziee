@@ -80,10 +80,8 @@ define("MAX_LETTER",435);
     
     $sessionManager= new SessionManager();
     $sessionManager->SessionStart();
-
-    if($sessionManager->IsSessionExpired()){
-        header("location: http://localhost/Noteziee/SomethingGoesWrong/403/");
-    }
+    $sessionManager->IsSessionExpired();
+    
     $showerPack= new FetchComment();
     $commentBoxTrigger= new BoxCommentController();
     $deleteButtonTrigger=new DeleteButton();
