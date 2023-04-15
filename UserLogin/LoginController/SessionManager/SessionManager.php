@@ -24,7 +24,7 @@ class SessionManager{
     }
     function IsSessionExpired(){
         if(!isset($_SESSION['username'])&&!isset($_SESSION['password']))
-        header("location: http://localhost/Noteziee/SomethingGoesWrong/403/");
+        header("location: http://localhost/Noteziee/SomethingGoesWrong/SessionExpired/");
     }
     function SessionDelete(){
         $_SESSION = array(); // unset all session variables

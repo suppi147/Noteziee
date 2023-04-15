@@ -27,9 +27,10 @@
        </div>
        <div data-aos="fade-left"  class="col-md-7 text-part">
         <h1>403</h1>
-        <h2>OOFs! you are not suppose to be here.</h2>
-        <p>Only suppi147 have the right to enter this place but if you can, that's incredible.</p>
-        <a href="http://localhost/Noteziee/Homepage/"><button id="circle" style="margin-top: 20px;">Home</button></a>
+        <h2>OH man! so fast, a week has flown by.</h2>
+        <p>It's look like your session has expired. You might want to press that button down below to login again.
+        </p>
+        <a href="http://localhost/Noteziee/UserLogin/LoginController/"><button id="circle" style="margin-top: 20px;">Login</button></a>
       </div>
         </div>
         
