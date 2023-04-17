@@ -1,5 +1,6 @@
 <?php
 include __DIR__.'/../../DatabaseInteraction/DatabaseController.php';
+include __DIR__.'/SessionManager/SessionManager.php';
 
 //include __DIR__.'/../../DatabaseInteraction/UpdateDatabase.php';
 class LoginController{

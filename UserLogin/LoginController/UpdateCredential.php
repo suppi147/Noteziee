@@ -1,7 +1,6 @@
 <?php
 require_once("FilterCredential.php");
 require_once("LoginController.php");
-require_once("SessionManager.php");
 include __DIR__.'/../../TableAccessController/TableAccessController.php';
 
 class UpdateCredential extends LoginController{
@@ -14,36 +13,30 @@ class UpdateCredential extends LoginController{
         parent::__construct();
     }
 
-    function Insert2LoginDB($username,$password){
-
-        $filter= new FilterCredential();
-        $filter->FilterEmailPassword($username,$password);
-        $this->username=$filter->GetUsername();
-        $this->password=$filter->GetPassword();
+    function Insert2LoginDB($username){
         
-        if($filter->CheckRecordExist()){
-            $this->session->StartSession();
-            $_SESSION['username']=$this->userNoteTable->GetNotingTableID($this->username);
-            $_SESSION['password']=$this->userNoteTable->GetNotingTablePassword();
-            header("location: http://localhost/Noteziee/CommentUI/index/");
-        }
-        else{
+        $filter= new FilterCredential();
+        $filter->FilterEmail($username);
+        $this->username=$filter->GetUsername();
+
+        
+        
+        if(!($filter->CheckRecordExist())){
             $this->Connect2loginDB();
             $this->noteTableID=uniqid();
-            $query='INSERT INTO users(username,password,noteTableID) VALUES ("'.$this->username.'","'.$this->password.'","'.$this->noteTableID.'")';
+            $query='INSERT INTO users(username,noteTableID) VALUES ("'.$this->username.'","'.$this->noteTableID.'")';
             $this->InteractCommentDB->Update2DB($query);
             $this->userNoteTable->CreateNotingTableForUser($this->noteTableID);
-
             $this->Disconnect2loginDB();
-            $this->session->StartSession();
-            $_SESSION['username']=$this->userNoteTable->GetNotingTableID($this->username);
-            $_SESSION['password']=$this->userNoteTable->GetNotingTablePassword();
-            header("location: http://localhost/Noteziee/CommentUI/index/");
         }
-        
+
+        $sessionManager= new SessionManager();
+        $sessionManager->SessionStart();
+       
+        $_SESSION['username']=$this->userNoteTable->GetNotingTableID($this->username);
+        $_SESSION['password']=$this->userNoteTable->GetNotingTablePassword();
+        header("location: http://localhost/Noteziee/CommentUI/index/");
     }
 
 }
-$a =new UpdateCredential();
-$a->Insert2LoginDB($_POST["email"],$_POST["password"]);
 ?>

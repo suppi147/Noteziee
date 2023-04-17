@@ -1,7 +1,7 @@
 function deleteID (id) {
   var form = document.createElement('form');
   form.setAttribute('method', 'post');
-  form.setAttribute('action', 'http://localhost/Noteziee/MainController/MainRail.php');
+  form.setAttribute('action', 'http://localhost/Noteziee/ZieeAPI/ZieeAPI.php');
   
   var input=document.createElement('input');
   input.hidden=true;
@@ -43,7 +43,7 @@ function UntoggleOn1(checkID){
     checkboxes[0].checked=false;
   }
   const xhttp= new XMLHttpRequest();
-  xhttp.open("POST","http://localhost/Noteziee/MainController/MainRail.php",true);
+  xhttp.open("POST","http://localhost/Noteziee/ZieeAPI/ZieeAPI.php",true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("control_flag=select&id="+checkID+"&checker="+checkboxes[0].checked);
 }
@@ -67,7 +67,7 @@ function SelectAll() {
     }
 
   const xhttp= new XMLHttpRequest();
-  xhttp.open("POST","http://localhost/Noteziee/MainController/MainRail.php",true);
+  xhttp.open("POST","http://localhost/Noteziee/ZieeAPI/ZieeAPI.php",true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("control_flag=selectAll&checker="+checkboxes[0].checked);
 }
@@ -76,7 +76,7 @@ function ChecklistArray(checkID){
   const xhttp= new XMLHttpRequest();
   var checkboxes = document.querySelectorAll('input[id="'+checkID+'"]');
   
-    xhttp.open("POST","http://localhost/Noteziee/MainController/MainRail.php",true);
+    xhttp.open("POST","http://localhost/Noteziee/ZieeAPI/ZieeAPI.php",true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("control_flag=select&id="+checkID+"&checker="+checkboxes[0].checked);
 }

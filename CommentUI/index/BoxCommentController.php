@@ -28,8 +28,7 @@ class BoxCommentController{
                                         padding-right: 3rem;
                                         padding-top: 2rem;
                                         padding-bottom: 0.2rem;"><span><p class="p-edit" id="'.$id.'">';
-        $this->commentBoxTailer='</p></span>
-                                    </div>
+        $this->commentBoxTailer='</p></span></div>
                                           </div>
                                                 </div>';  
         return $this->commentBoxHeader.$this->commentBoxItem.$commentBox.$this->commentBoxTailer;

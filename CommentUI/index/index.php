@@ -29,8 +29,8 @@
               <div class="row">
                    <div class="col-lg-3 col-md-12 logo">
                     
-                       <a href="http://localhost/Noteziee/Homepage/"><img class="white" src="http://localhost/Noteziee/Homepage/assets/images/logo.png" alt=""></a>
-                       <a href="http://localhost/Noteziee/Homepage/"><img class="gray" src="http://localhost/Noteziee/Homepage/assets/images/logo-gray.png" alt=""></a>
+                       <a href="#"><img class="white" src="http://localhost/Noteziee/Homepage/assets/images/logo.png" alt=""></a>
+                       <a href="#"><img class="gray" src="http://localhost/Noteziee/Homepage/assets/images/logo-gray.png" alt=""></a>
 
                        <a class="small-menu" class="d-lg-none" data-toggle="collapse" data-target="#menu" href="#menu" >
                            <i  class="fas d-lg-none fa-bars"></i>
@@ -38,8 +38,8 @@
                    </div>
                    <div id="menu" class="col-lg-9 d-none d-lg-block navigation">
                        <ul>
-                           <li><a href="http://localhost/Noteziee/Homepage">Home</a></li>
-                           <li><a href="#contact">About Noteziee</a></li>
+                           <li><a href="#">Home</a></li>
+                           <li><a href="http://localhost/Noteziee/UserLogin/LoginController/Logout.php">Logout</a></li>                    
                        </ul>
                    </div>
               </div>
@@ -47,7 +47,7 @@
       </header>
       <div class="slider container-fluid">
       <div class="container">
-      <form action="http://localhost/Noteziee/MainController/MainRail.php" name="submitForm" method="POST" id="commentID" onclick="ReceiveEnter();">
+      <form action="http://localhost/Noteziee/ZieeAPI/ZieeAPI.php" name="submitForm" method="POST" id="commentID" onclick="ReceiveEnter();">
                 <div class="form-group">
                  <textarea name="commentContent" id="commentContent" class="textarea-edit" placeholder="Enter Something :3" rows="10" cols="60"></textarea>
                 </div>
@@ -66,6 +66,7 @@
 include __DIR__.'/../../CommentController/FetchComment.php';
 include __DIR__.'/../../CommentController/DeleteComment.php';
 include __DIR__.'/../../CommentController/EditComment.php';
+include __DIR__.'/../../UserLogin/LoginController/SessionManager/SessionManager.php';
 require_once("BoxCommentController.php");
 require_once("DeleteButton.php");
 require_once("EditButton.php");
@@ -76,7 +77,11 @@ require_once("CopyButton.php");
 define("MAX_COMMENTLINE",6);
 define("MAX_LETTER",435);
 
-    session_start();
+    
+    $sessionManager= new SessionManager();
+    $sessionManager->SessionStart();
+    $sessionManager->IsSessionExpired();
+    
     $showerPack= new FetchComment();
     $commentBoxTrigger= new BoxCommentController();
     $deleteButtonTrigger=new DeleteButton();
@@ -93,24 +98,7 @@ define("MAX_LETTER",435);
         $commentBoxTrigger->AddButtons2Pack($editButtonTrigger->EditButtonPack($commentShow,$commentID));
         $commentBoxTrigger->AddButtons2Pack($copyButtonTrigger->CopyButtonPack($commentID,$commentShow));
         if(substr_count($commentShow,"\n")>MAX_COMMENTLINE or strlen($commentShow)>MAX_LETTER){
-            $commentBoxTrigger->AddButtons2Pack($modalButtonTrigger->ModalButtonPack($commentShow));
-            if(substr_count($commentShow,"\n")>MAX_COMMENTLINE ){
-                $showMore=explode("\n", $commentShow);
-                $commentShow="";
-                for ($i=0; $i < MAX_COMMENTLINE; $i++) { 
-                    if($i==MAX_COMMENTLINE-1){
-                        $commentShow=$commentShow.$showMore[$i]."\n";
-                        break;
-                    }
-                    $commentShow=$commentShow.$showMore[$i]."\n";
-                }
-                $commentShow=$commentShow.".....";
-            }
-            if(strlen($commentShow)>MAX_LETTER){
-                $commentShow=substr($commentShow,0,MAX_LETTER-100);
-                $commentShow=$commentShow.".....";
-            }
-            
+            $commentBoxTrigger->AddButtons2Pack($modalButtonTrigger->ModalButtonPack($commentShow));        
         }
         $commentBoxTrigger->AddButtons2Pack($checkBoxTrigger->CheckBoxPack($commentID));
         

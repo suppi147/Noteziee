@@ -44,7 +44,7 @@ class DeleteComment extends CommentController{
                 echo '<script>alert("Invalid ID")</script>';
                 exit();
             }    
-        if($boxChecker=="true")
+        if(strcmp($boxChecker,"true")==0)
             {
                 $query="SELECT EXISTS(SELECT * FROM IDBlock".$_SESSION['username']." WHERE block=".$this->filterID.")";
                 $result=$this->InteractCommentDB->FetchFromDB($query);
@@ -56,7 +56,7 @@ class DeleteComment extends CommentController{
             }
         }
         else{
-            $query='DELETE FROM IDBlock'.$_SESSION['username'].' WHERE block='.$this->filterID.'"';
+            $query='DELETE FROM IDBlock'.$_SESSION['username'].' WHERE block='.$this->filterID;
             $this->InteractCommentDB->Update2DB($query);
         }
         $this->Disconnect2DB();

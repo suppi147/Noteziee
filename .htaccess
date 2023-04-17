@@ -1,0 +1,2 @@
+ErrorDocument 404 http://localhost/Noteziee/SomethingGoesWrong/404/
+ErrorDocument 403 http://localhost/Noteziee/SomethingGoesWrong/403/
