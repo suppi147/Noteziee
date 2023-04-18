@@ -1,2 +1,10 @@
 Ubuntu
-- 
+sudo apt update
+sudo apt upgrade
+sudo apt install php mysql-server php-mysql
+sudo apt install git
+sudo apt install mousepad
+
+apache2
+sudo mousepad /etc/apache2/apache2.conf
+AllowOverride All(/var/www)
