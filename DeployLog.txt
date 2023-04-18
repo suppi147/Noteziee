@@ -8,3 +8,6 @@ sudo apt install mousepad
 apache2
 sudo mousepad /etc/apache2/apache2.conf
 AllowOverride All(/var/www)
+
+mysql
+CREATE DATABASE CommentDB;
