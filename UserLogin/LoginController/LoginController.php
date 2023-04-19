@@ -25,7 +25,7 @@ class LoginController{
 
     function Connect2loginDB(){
         $hostname="localhost";
-        $dbname="loginDB";
+        $dbname="LoginDB";
         $username="loginuser";
         $password="password";
         $this->InteractCommentDB->SetDBInformation($hostname,$dbname,$username,$password);

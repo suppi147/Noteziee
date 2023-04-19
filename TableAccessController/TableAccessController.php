@@ -16,9 +16,9 @@ class TableAccessController {
         $this->connect2users=new DatabaseController();
 
         $this->hostname="localhost";
-        $this->dbname="loginDB";
-        $this->username="root";
-        $this->password="uitcisco";
+        $this->dbname="LoginDB";
+        $this->username="loginuser";
+        $this->password="password";
     }
 
     private function Connect2CommentDB(){
@@ -69,7 +69,8 @@ class TableAccessController {
         $this->connect2users->Update2DB($grantIDBlockQuery);
 
         $this->Disconnect2CommentDB();
-
+        
+        
     } 
 }
 ?>
