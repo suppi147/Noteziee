@@ -13,8 +13,8 @@ $sessionManager->IsSessionExpired();
 $controller= new CommentController();
 switch($_POST["control_flag"]){
      case 'post':{
-          $limitComments= new LimitComments();
-          $limitComments->CheckForLimit($_POST["commentContent"]);
+          $limitComments= new LimitComments($_POST["commentContent"]);
+          $limitComments->CheckForLimit();
           $postTrigger=new PostComment();
           $postTrigger->InteractCommentDB->SetDBInformation("localhost","CommentDB",$_SESSION['username'],$_SESSION['password']);
           $postTrigger->Post($_POST["commentContent"]);

@@ -3,6 +3,6 @@ define('COMMENTCROSS',"location: http://localhost/Noteziee/SomethingGoesWrong/Po
 
 define('COMMENT_TYPE_LIMIT',20000);
 abstract class LimitationControl{
-    abstract protected function CheckForLimit($items);
+    abstract protected function CheckForLimit();
 }
 ?>
