@@ -23,7 +23,7 @@ class UpdateCredential extends LoginController{
 
         
         if(!($filter->CheckRecordExist())){
-            $this->checkAccountLimit->CheckForLimit();
+            //$this->checkAccountLimit->CheckForLimit();
             $this->Connect2loginDB();
             $this->noteTableID=uniqid();
             $query='INSERT INTO users(username,noteTableID) VALUES ("'.$this->username.'","'.$this->noteTableID.'")';
