@@ -1,7 +1,7 @@
 <?php
-include __DIR__.'/../../DatabaseInteraction/DatabaseController.php';
-include __DIR__.'/SessionManager/SessionManager.php';
 
+include __DIR__.'/SessionManager/SessionManager.php';
+include __DIR__.'/../../LimitationControl/LimitAccount.php';
 //include __DIR__.'/../../DatabaseInteraction/UpdateDatabase.php';
 class LoginController{
     protected $InteractCommentDB;
@@ -27,7 +27,7 @@ class LoginController{
         $hostname="localhost";
         $dbname="LoginDB";
         $username="loginuser";
-        $password="password";
+        $password="";
         $this->InteractCommentDB->SetDBInformation($hostname,$dbname,$username,$password);
         $this->InteractCommentDB->Connect2DB();
     }
