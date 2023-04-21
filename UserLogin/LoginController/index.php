@@ -39,7 +39,7 @@ include __DIR__.'/OAuthManager/OAuthManager.php';
         
           </div>
           <div class="footer-link padding-top--24">
-            <span style="color: #f2f2f2;">Google use OAuth to login almost anything that's belong to Google... Including Noteziee ;3</span>
+            <span style="color: #f2f2f2;">Google uses OAuth to log in to almost anything that belong to Google... Including Noteziee ;3</span>
           </div>
         </div>
       </div>

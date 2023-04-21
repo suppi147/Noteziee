@@ -28,7 +28,7 @@
        <div data-aos="fade-left"  class="col-md-7 text-part">
         <h1>Violation</h1>
         <h2>UH NOOO! Red card.</h2>
-        <p>Due to the lack of resources suppi147 only allow 50 notes to be commented per a user. If you touch the limits you might want to get rid some of those notes or maybe everything.
+        <p>Due to the lack of resources, suppi147 only allows 50 notes to be commented on per user. If you touch the limits you might want to get rid of some of those notes or maybe everything.
         </p>
         <a href="http://localhost/Noteziee/CommentUI/index/"><button id="circle" style="margin-top: 20px;">NoteUI</button></a>
       </div>

@@ -27,7 +27,7 @@
        </div>
        <div data-aos="fade-left"  class="col-md-7 text-part">
         <h1>403</h1>
-        <h2>OOFs! you are not suppose to be here.</h2>
+        <h2>OOFs! You are not supposed to be here.</h2>
         <p>Only suppi147 have the right to enter this place but if you can, that's incredible.</p>
         <a href="http://localhost/Noteziee/Homepage/"><button id="circle" style="margin-top: 20px;">Home</button></a>
       </div>

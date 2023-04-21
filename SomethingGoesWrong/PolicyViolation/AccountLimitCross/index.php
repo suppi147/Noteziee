@@ -28,7 +28,7 @@
        <div data-aos="fade-left"  class="col-md-7 text-part">
         <h1>Violation</h1>
         <h2>UH NOOO! Green card.</h2>
-        <p>We have just got the fifty accounts signed up(but you're the 51st) which is full(Its a free server I got from a drug dealer... What would you expect!!) and yep, we our of the service. For further informations please contact <a href="https://www.facebook.com/khoi.lee.2090" target="_blank">suppi147</a>.
+        <p>We have just got the fifty accounts signed up(but you're the 51st) which is full(It's a free server I got from a drug dealer... What would you expect!!) and yep, we are out of the service. For further information please contact <a href="https://www.facebook.com/khoi.lee.2090" target="_blank">suppi147</a>.
         </p>
         <a href="http://localhost/Noteziee/Homepage/"><button id="circle" style="margin-top: 20px;">Home</button></a>
       </div>

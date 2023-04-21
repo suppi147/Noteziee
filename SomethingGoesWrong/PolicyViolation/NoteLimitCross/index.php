@@ -28,7 +28,7 @@
        <div data-aos="fade-left"  class="col-md-7 text-part">
         <h1>Violation</h1>
         <h2>UH NOOO! Yellow card.</h2>
-        <p>You have reach your maximum noting limits which is 20KB. All the information just entered, will be discarded.
+        <p>You have reached your maximum noting limit which is 20,000 words. All the information just entered, will be discarded.
         </p>
         <a href="http://localhost/Noteziee/CommentUI/index/"><button id="circle" style="margin-top: 20px;">NoteUI</button></a>
       </div>
