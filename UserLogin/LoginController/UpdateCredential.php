@@ -1,8 +1,7 @@
 <?php
 require_once("FilterCredential.php");
 require_once("LoginController.php");
-
-
+include __DIR__.'/../../TableAccessController/TableAccessController.php';
 class UpdateCredential extends LoginController{
     protected $noteTableID;
     protected $userNoteTable;
@@ -22,8 +21,8 @@ class UpdateCredential extends LoginController{
         $this->username=$filter->GetUsername();
 
         
-        if(!($filter->CheckRecordExist())){
-            //$this->checkAccountLimit->CheckForLimit();
+        if($filter->CheckRecordExist()){
+            $this->checkAccountLimit->CheckForLimit();
             $this->Connect2loginDB();
             $this->noteTableID=uniqid();
             $query='INSERT INTO users(username,noteTableID) VALUES ("'.$this->username.'","'.$this->noteTableID.'")';

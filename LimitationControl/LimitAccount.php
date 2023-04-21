@@ -28,6 +28,4 @@ class LimitAccount extends LimitationControl{
         $this->interactWithDB->Disconnect2DB();
     }
 }
-$a=new LimitAccount();
-$a->CheckForLimit();
 ?>
