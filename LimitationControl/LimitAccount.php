@@ -18,8 +18,8 @@ class LimitAccount extends LimitationControl{
         $this->interactWithDB->Connect2DB();
         $countRowQuery="SELECT COUNT(*) FROM users";
         $result=$this->interactWithDB->FetchFromDB($countRowQuery);
-        foreach($result as $noteTableID){
-            $this->maxAccount=$noteTableID['COUNT(*)'];
+        foreach($result as $numOfAccount){
+            $this->maxAccount=$numOfAccount['COUNT(*)'];
         }
         if($this->maxAccount>=ACCOUNT_LIMIT){
             header(ACCOUNTCROSS);

@@ -6,6 +6,8 @@ include __DIR__.'/../CommentController/EditComment.php';
 include __DIR__.'/../CommentController/SelectAllComment.php';
 include __DIR__.'/../UserLogin/LoginController/SessionManager/SessionManager.php';
 include __DIR__.'/../LimitationControl/LimitComments.php';
+include __DIR__.'/../LimitationControl/LimitAllNote.php';
+
 $sessionManager=new SessionManager();
 $sessionManager->SessionStart();
 $sessionManager->IsSessionExpired();
@@ -13,6 +15,9 @@ $sessionManager->IsSessionExpired();
 $controller= new CommentController();
 switch($_POST["control_flag"]){
      case 'post':{
+          
+          $limitAllComments= new LimitAllNote($_SESSION['username']);
+          $limitAllComments->CheckForLimit();
           $limitComments= new LimitComments($_POST["commentContent"]);
           $limitComments->CheckForLimit();
           $postTrigger=new PostComment();
