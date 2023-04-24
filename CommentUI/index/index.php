@@ -126,7 +126,7 @@ echo '</div>
                    <h2>Quick Links</h2>
                    <ul style="margin-left: 60px;">
                     <li><a style="color:#f7f2f2;" href="#">Home</a></li>
-                    <li><a style="color:#f7f2f2;" href="#features">Policy</a></li>
+                    <li><a style="color:#f7f2f2;" href="#policy">Policy</a></li>
                     <li><a style="color:#f7f2f2;" href="#contact">About Noteziee</a></li>
                 </ul>
                    </div>
