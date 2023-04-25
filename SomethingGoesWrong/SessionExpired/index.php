@@ -28,9 +28,9 @@
        <div data-aos="fade-left"  class="col-md-7 text-part">
         <h1>403</h1>
         <h2>OH man! so fast, a week has flown by.</h2>
-        <p>It's look like your session has expired. You might want to press that button down below to login again.
+        <p>It looks like your session has expired. You might want to press that button down below to log in again.
         </p>
-        <a href="http://localhost/Noteziee/UserLogin/LoginController/"><button id="circle" style="margin-top: 20px;">Login</button></a>
+        <a href="http://localhost/Noteziee/UserLogin/LoginController/"><button id="circle" style="margin-top: 20px;">Log in</button></a>
       </div>
         </div>
         

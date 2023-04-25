@@ -1,0 +1,21 @@
+Ubuntu
+sudo apt update
+sudo apt upgrade
+sudo apt install php mysql-server php-mysql
+sudo apt install git
+
+apache2
+sudo mousepad /etc/apache2/apache2.conf
+AllowOverride All(/var/www)
+
+mysql
+CREATE DATABASE CommentDB;
+CREATE DATABASE LoginDB;
+CREATE TABLE users(id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,username VARCHAR(255) NOT NULL,noteTableID VARCHAR(255) NOT NULL);
+CREATE USER 'loginuser'@'localhost' IDENTIFIED BY 'password';
+GRANT SELECT,UPDATE,DELETE,INSERT ON LoginDB.users TO 'loginuser'@'localhost' WITH GRANT OPTION;
+GRANT SELECT ON CommentDB.* TO 'loginuser'@'localhost' WITH GRANT OPTION;
+GRANT CREATE USER ON *.* TO 'loginuser'@'localhost';
+
+Ubuntu user
+sudo chown -R root:noteziee /var/www/html/Noteziee

@@ -39,7 +39,7 @@ class DatabaseController{
             $trigger->execute();
         }
         else{
-            echo "Cannot interact with DB.";
+            echo "Cannot update with DB.";
         }
     }
 
@@ -50,7 +50,7 @@ class DatabaseController{
             return $trigger->fetchAll();
         }
         else{
-            echo "Cannot interact with DB.";
+            echo "Cannot fetch with DB.";
         }
     }
 
@@ -66,8 +66,7 @@ class DatabaseController{
             }
         }
         else{
-            echo "Cannot interact with DB.";
+            echo "Cannot check with DB.";
         }
     }
 }
-

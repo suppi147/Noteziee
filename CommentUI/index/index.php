@@ -38,7 +38,7 @@
                    </div>
                    <div id="menu" class="col-lg-9 d-none d-lg-block navigation">
                        <ul>
-                           <li><a href="#">Home</a></li>
+                           <li><a href="#" onclick="customAlert.alert('For our security measurement and resource saves. Limits are set at 50 accounts maximum, 50 notes per account, and 20,000 words per note.','Heads Up!')">Policy</a>
                            <li><a href="http://localhost/Noteziee/UserLogin/LoginController/Logout.php">Logout</a></li>                    
                        </ul>
                    </div>
@@ -67,6 +67,8 @@ include __DIR__.'/../../CommentController/FetchComment.php';
 include __DIR__.'/../../CommentController/DeleteComment.php';
 include __DIR__.'/../../CommentController/EditComment.php';
 include __DIR__.'/../../UserLogin/LoginController/SessionManager/SessionManager.php';
+
+
 require_once("BoxCommentController.php");
 require_once("DeleteButton.php");
 require_once("EditButton.php");
@@ -124,7 +126,7 @@ echo '</div>
                    <h2>Quick Links</h2>
                    <ul style="margin-left: 60px;">
                     <li><a style="color:#f7f2f2;" href="#">Home</a></li>
-                    <li><a style="color:#f7f2f2;" href="#features">Features</a></li>
+                    <li><a style="color:#f7f2f2;" href="#policy">Policy</a></li>
                     <li><a style="color:#f7f2f2;" href="#contact">About Noteziee</a></li>
                 </ul>
                    </div>

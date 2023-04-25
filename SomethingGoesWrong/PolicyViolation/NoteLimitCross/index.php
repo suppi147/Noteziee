@@ -1,4 +1,4 @@
-<?php http_response_code(403); ?>
+<?php http_response_code(404); ?>
 <!doctype html>
 <html lang="en">
 
@@ -26,10 +26,11 @@
             <img src="http://localhost/Noteziee/SomethingGoesWrong/assets/images/404s.png" alt="">
        </div>
        <div data-aos="fade-left"  class="col-md-7 text-part">
-        <h1>403</h1>
-        <h2>OOFs! You are not supposed to be here.</h2>
-        <p>Only suppi147 have the right to enter this place but if you can, that's incredible.</p>
-        <a href="http://localhost/Noteziee/Homepage/"><button id="circle" style="margin-top: 20px;">Home</button></a>
+        <h1>Violation</h1>
+        <h2>UH NOOO! Yellow card.</h2>
+        <p>You have reached your maximum noting limit which is 20,000 words. All the information just entered, will be discarded.
+        </p>
+        <a href="http://localhost/Noteziee/CommentUI/index/"><button id="circle" style="margin-top: 20px;">NoteUI</button></a>
       </div>
         </div>
         
