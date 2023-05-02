@@ -7,20 +7,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="http://localhost/Noteziee/CommentUI/css/index.css" rel="stylesheet" />
-        <link href="http://localhost/Noteziee/CommentUI/css/checkbox.css" rel="stylesheet" />
+        <link href="/Noteziee/CommentUI/css/index.css" rel="stylesheet" />
+        <link href="/Noteziee/CommentUI/css/checkbox.css" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="http://localhost/Noteziee/CommentUI/js/index.js"></script>
+        <script src="/Noteziee/CommentUI/js/index.js"></script>
         
-    <link rel="shortcut icon" href="http://localhost/Noteziee/Homepage/assets/icon/icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/Noteziee/Homepage/assets/icon/icon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link rel="stylesheet" href="http://localhost/Noteziee/Homepage/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://localhost/Noteziee/Homepage/assets/css/fontawsom-all.min.css">
-    <link rel="stylesheet" href="http://localhost/Noteziee/Homepage/assets/css/button.css">
-    <link rel="stylesheet" href="http://localhost/Noteziee/Homepage/assets/plugins/owl/owl.carousel.min.css">
-      <link rel="stylesheet" href="http://localhost/Noteziee/Homepage/assets/plugins/owl/owl.theme.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost/Noteziee/Homepage/assets/css/style.css" />
+    <link rel="stylesheet" href="/Noteziee/Homepage/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Noteziee/Homepage/assets/css/fontawsom-all.min.css">
+    <link rel="stylesheet" href="/Noteziee/Homepage/assets/css/button.css">
+    <link rel="stylesheet" href="Noteziee/Homepage/assets/plugins/owl/owl.carousel.min.css">
+      <link rel="stylesheet" href="/Noteziee/Homepage/assets/plugins/owl/owl.theme.css">
+    <link rel="stylesheet" type="text/css" href="/Noteziee/Homepage/assets/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
@@ -29,8 +29,8 @@
               <div class="row">
                    <div class="col-lg-3 col-md-12 logo">
                     
-                       <a href="#"><img class="white" src="http://localhost/Noteziee/Homepage/assets/images/logo.png" alt=""></a>
-                       <a href="#"><img class="gray" src="http://localhost/Noteziee/Homepage/assets/images/logo-gray.png" alt=""></a>
+                       <a href="#"><img class="white" src="/Noteziee/Homepage/assets/images/logo.png" alt=""></a>
+                       <a href="#"><img class="gray" src="/Noteziee/Homepage/assets/images/logo-gray.png" alt=""></a>
 
                        <a class="small-menu" class="d-lg-none" data-toggle="collapse" data-target="#menu" href="#menu" >
                            <i  class="fas d-lg-none fa-bars"></i>
@@ -189,11 +189,11 @@ echo '</div>
    </footer>
 
             </body>
-            <script src="http://localhost/Noteziee/Homepage/assets/js/jquery-3.2.1.min.js"></script>
-            <script src="http://localhost/Noteziee/Homepage/assets/js/popper.min.js"></script>
-            <script src="http://localhost/Noteziee/Homepage/assets/js/bootstrap.min.js"></script>
-            <script src="http://localhost/Noteziee/Homepage/assets/plugins/owl/owl.carousel.min.js"></script>
-            <script src="http://localhost/Noteziee/Homepage/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
-            <script src="http://localhost/Noteziee/Homepage/assets/js/script.js"></script>
+            <script src="/Noteziee/Homepage/assets/js/jquery-3.2.1.min.js"></script>
+            <script src="/Noteziee/Homepage/assets/js/popper.min.js"></script>
+            <script src="/Noteziee/Homepage/assets/js/bootstrap.min.js"></script>
+            <script src="/Noteziee/Homepage/assets/plugins/owl/owl.carousel.min.js"></script>
+            <script src="/Noteziee/Homepage/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
+            <script src="/Noteziee/Homepage/assets/js/script.js"></script>
                 </html>';
 ?>

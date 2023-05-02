@@ -6,8 +6,8 @@ include __DIR__.'/OAuthManager/OAuthManager.php';
 <html>
 <head>
   <title>Noteziee</title>
-  <link rel="shortcut icon" href="http://localhost/Noteziee/Homepage/assets/icon/icon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="http://localhost/Noteziee/UserLogin/assets/css/login.css">
+  <link rel="shortcut icon" href="/Noteziee/Homepage/assets/icon/icon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/Noteziee/UserLogin/assets/css/login.css">
   <meta charset="utf-8">
  
 </head>
