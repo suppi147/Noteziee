@@ -9,6 +9,7 @@ class SessionManager{
         $sessionParams = session_get_cookie_params();
         $sessionParams["httponly"] = true;
         $sessionParams["lifetime"]=604800;
+        session_set_cookie_params(604800);
         ini_set('session.cookie_samesite', 'Lax');
 
         // Set the session cookie parameters
