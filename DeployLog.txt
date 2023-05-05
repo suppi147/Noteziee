@@ -14,7 +14,7 @@ CREATE DATABASE LoginDB;
 CREATE TABLE users(id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,username VARCHAR(255) NOT NULL,noteTableID VARCHAR(255) NOT NULL);
 CREATE USER 'loginuser'@'localhost' IDENTIFIED BY 'password';
 GRANT SELECT,UPDATE,DELETE,INSERT ON LoginDB.users TO 'loginuser'@'localhost' WITH GRANT OPTION;
-GRANT SELECT ON CommentDB.* TO 'loginuser'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON `CommentDB`.* TO `loginuser`@`localhost` WITH GRANT OPTION
 GRANT CREATE USER ON *.* TO 'loginuser'@'localhost';
 
 Ubuntu user
