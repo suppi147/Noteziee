@@ -6,6 +6,7 @@ include __DIR__.'/OAuthManager/OAuthManager.php';
 <html>
 <head>
   <title>Noteziee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="/Noteziee/Homepage/assets/icon/icon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/Noteziee/UserLogin/assets/css/login.css">
   <meta charset="utf-8">
@@ -19,7 +20,7 @@ include __DIR__.'/OAuthManager/OAuthManager.php';
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
           <div class="form-center">
             <a class="a" href="http://localhost/Noteziee/Homepage/" rel="dofollow">
-            <img src="http://localhost/Noteziee/UserLogin/assets/images/tree.png" alt=""></a>
+            <img src="/Noteziee/UserLogin/assets/images/tree.png" alt=""></a>
        </div>
         </div>
         <div class="formbg-outer">
@@ -27,7 +28,7 @@ include __DIR__.'/OAuthManager/OAuthManager.php';
             
            <div  class="formbg col-md-7 text-part" >
             <div class="formbg-inner padding-horizontal--48" style="padding-bottom: 26px;">
-            <img src="http://localhost/Noteziee/UserLogin/assets/images/g.png" style="margin-left: 160px;margin-top: -10px;" alt=""></a>
+            <img src="/Noteziee/UserLogin/assets/images/g.png" style="margin-left: 160px;margin-top: -10px;" alt=""></a>
               <form action=<?php echo $client->createAuthUrl();?> name="loginForm" method="POST" id="loginID">      
                 <div class="field padding-bottom--24">
                   <input type="submit" name="control_flag" value="Sign in with Google Account" style="margin-top: 20px;">
