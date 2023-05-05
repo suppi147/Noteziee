@@ -21,7 +21,7 @@ class UpdateCredential extends LoginController{
         $this->username=$filter->GetUsername();
 
         
-        if($filter->CheckRecordExist()){
+        if(!($filter->CheckRecordExist())){
             $this->checkAccountLimit->CheckForLimit();
             $this->Connect2loginDB();
             $this->noteTableID=uniqid();
