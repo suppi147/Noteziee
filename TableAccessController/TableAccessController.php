@@ -61,7 +61,7 @@ class TableAccessController {
         $this->connect2users->Update2DB($createNewUserQuery);
         
         //create table
-        $createUserTableQuery='CREATE TABLE CommentTable'.$this->tableName.'(id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT, commentItem text)';
+        $createUserTableQuery='CREATE TABLE CommentTable'.$this->tableName.'(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, commentItem text)';
         $this->connect2users->Update2DB($createUserTableQuery);
         
         $createIDBlockQuery='CREATE TABLE IDBlock'.$this->tableName.'(block varchar(255) NOT NULL)';
