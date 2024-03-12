@@ -19,7 +19,8 @@ Noteziee is a web application for noting down texts, with fast login mechanism a
 - Bootstrap 4.0
 
 ## Demo
-- Here's a live demo of Noteziee: https://noteziee.cloud
+- I'm so sorry to announce that Noteziee is currently shut down due to the lack of financial support :<. Anyway, if you still feel interested about my project, please contact me by [Le Khoi](https://www.facebook.com/khoi.lee.2090/)
+- ~~Here's a live demo of Noteziee: https://noteziee.cloud~~
 
 ## License
 - This project is licensed under the [MIT License.](https://github.com/suppi147/Noteziee/blob/deploy/LICENSE)
